@@ -40,7 +40,22 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: radial-gradient(700px circle at 50% -10%, rgba(52, 211, 153, 0.07), transparent 60%);
+      background:
+        radial-gradient(700px circle at 50% -10%, rgba(52, 211, 153, 0.07), transparent 60%),
+        radial-gradient(900px circle at 85% 110%, rgba(52, 211, 153, 0.05), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(228, 228, 231, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(228, 228, 231, 0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+      mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
       pointer-events: none;
       z-index: 0;
     }
@@ -83,7 +98,7 @@
     .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ---------- Sections ---------- */
-    section { padding: 96px 0; }
+    section { padding: 96px 0; scroll-margin-top: 64px; }
     .kicker {
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
@@ -123,7 +138,12 @@
       letter-spacing: -0.03em;
       line-height: 1.05;
       margin-top: 26px;
+      background: linear-gradient(180deg, #ffffff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+    h1 .accent { -webkit-text-fill-color: var(--accent); }
     .hero-tagline {
       font-size: clamp(18px, 2.5vw, 22px);
       color: var(--muted);
@@ -139,7 +159,11 @@
       font-size: 15px; font-weight: 600;
       transition: all 0.2s;
     }
-    .btn-primary { background: var(--accent); color: #052e1c; }
+    .btn-primary {
+      background: var(--accent);
+      color: #052e1c;
+      box-shadow: 0 8px 24px -8px rgba(52, 211, 153, 0.5);
+    }
     .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
     .btn-ghost { border: 1px solid var(--border); color: var(--text); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -156,10 +180,22 @@
       border-radius: 16px;
       padding: 28px;
       display: flex; flex-direction: column;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
-    .card:hover { transform: translateY(-3px); border-color: rgba(52, 211, 153, 0.45); }
-    .card-wide { grid-column: 1 / -1; }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(52, 211, 153, 0.45);
+      box-shadow: 0 12px 32px -12px rgba(52, 211, 153, 0.18);
+    }
+    .card-wide { grid-column: 1 / -1; position: relative; overflow: hidden; }
+    .card-wide::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.7;
+    }
     .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .card h3 { font-size: 18px; font-weight: 650; letter-spacing: -0.01em; }
     .pill {
@@ -230,6 +266,13 @@
       .nav-links { display: none; }
       section { padding: 72px 0; }
       .hero { padding: 140px 0 80px; }
+    }
+    /* ---------- Reveal on scroll ---------- */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .dot { animation: none; }
     }
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
@@ -353,15 +396,15 @@
 
           <article class="card">
             <div class="card-top">
-              <h3>AgentRelay</h3>
-              <span class="pill pill-muted">Infrastructure</span>
+              <h3>GWS Marketing</h3>
+              <span class="pill pill-accent">15 MCP Tools</span>
             </div>
-            <p>WebSocket relay for governed multi-agent communication — rate limits, identity registry, and Telegram control. Built for AI agents that talk to each other.</p>
+            <p>Agent-facing MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar and Drive, queried straight from any coding agent. Scoped OAuth and read-only by default; the only write action is a Gmail draft that stays human-reviewed.</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">WebSocket</span><span class="tag">Telegram API</span>
+              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Scoped OAuth</span><span class="tag">GA4 / GSC</span>
             </div>
             <div class="card-links">
-              <a href="https://github.com/adityarya24/AgentRelay" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/adityarya24/gws-marketing" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </article>
         </div>
@@ -431,9 +474,25 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Aditya Arya. All rights reserved.</span>
-      <span class="mono">built with plain HTML &amp; CSS <span class="accent">— no frameworks harmed</span></span>
+      <span class="mono">built with plain HTML, CSS &amp; vanilla JS <span class="accent">— no frameworks harmed</span></span>
     </div>
   </footer>
+
+  <script>
+    // Progressive enhancement: reveal cards/services on scroll.
+    // Classes are added here so the page stays fully visible without JS.
+    const revealTargets = document.querySelectorAll(".card, .service, .kicker, h2, .section-sub");
+    revealTargets.forEach((el) => el.classList.add("reveal"));
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    revealTargets.forEach((el) => observer.observe(el));
+  </script>
 
 </body>
 </html>
