@@ -3,30 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aditya Arya — AI Agents, MCP Servers & Automation</title>
-  <meta name="description" content="Aditya Arya builds AI agent systems, MCP servers, and automation tools for real-world workflows. Available for freelance projects." />
-  <meta property="og:title" content="Aditya Arya — AI Agents, MCP Servers & Automation" />
-  <meta property="og:description" content="I build AI agents, MCP servers & automations that do real work." />
+  <title>Aditya Arya — AI Agent Architect, MCP Servers & Autonomous Systems</title>
+  <meta name="description" content="Aditya Arya architects local-first AI multi-agent systems, production Model Context Protocol (MCP) servers, and 24/7 autonomous VPS fleets. Available for high-impact contract & sprint projects." />
+  <link rel="canonical" href="https://adityarya24.github.io/" />
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Aditya Arya — AI Agent Architect & MCP Builder" />
+  <meta property="og:description" content="I build multi-agent orchestrators, production MCP servers & autonomous pipelines that do real work." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adityarya24.github.io/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/82873763?v=4" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@adityarya_ai" />
+  <meta name="twitter:creator" content="@adityarya_ai" />
+  <meta name="twitter:title" content="Aditya Arya — AI Agent Architect & MCP Builder" />
+  <meta name="twitter:description" content="Local-first multi-agent orchestration, Model Context Protocol (MCP) tools, and 24/7 autonomous agent fleets." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82873763?v=4" />
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2309090b'/><text x='32' y='43' font-family='monospace' font-size='26' font-weight='700' fill='%2334d399' text-anchor='middle'>AA</text></svg>" />
-  <!-- Umami: privacy-friendly analytics, no cookies and so no consent banner.
-       askpanditji.co.in is on Vercel Analytics instead; the free plan here
-       covers one site, and this was the one measuring nothing. -->
+  
+  <!-- Privacy-friendly analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="ab7623d2-d287-4aab-8f7e-bb1838ffde8e"></script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
       --bg: #09090b;
-      --surface: #101013;
-      --border: #232327;
+      --surface: #101014;
+      --surface-raised: #16161b;
+      --border: #232328;
+      --border-subtle: rgba(228, 228, 231, 0.08);
       --text: #e4e4e7;
       --muted: #9f9fa8;
+      --muted-dark: #63636e;
       --accent: #34d399;
+      --accent-hover: #10b981;
       --accent-dim: rgba(52, 211, 153, 0.12);
+      --accent-glow: rgba(52, 211, 153, 0.25);
     }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -35,14 +55,17 @@
       font-family: "Inter", system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+    
+    /* Subtle background mesh and radial glow */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(700px circle at 50% -10%, rgba(52, 211, 153, 0.07), transparent 60%),
-        radial-gradient(900px circle at 85% 110%, rgba(52, 211, 153, 0.05), transparent 60%);
+        radial-gradient(850px circle at 50% -10%, rgba(52, 211, 153, 0.08), transparent 65%),
+        radial-gradient(1000px circle at 85% 105%, rgba(16, 185, 129, 0.06), transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -51,17 +74,18 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(228, 228, 231, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(228, 228, 231, 0.025) 1px, transparent 1px);
-      background-size: 56px 56px;
-      -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
-      mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+        linear-gradient(rgba(228, 228, 231, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(228, 228, 231, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 25%, transparent 80%);
+      mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 25%, transparent 80%);
       pointer-events: none;
       z-index: 0;
     }
+    
     ::selection { background: var(--accent); color: #052e1c; }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
     .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
     .accent { color: var(--accent); }
 
@@ -69,57 +93,74 @@
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 10;
-      background: rgba(9, 9, 11, 0.8);
-      backdrop-filter: blur(12px);
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.82);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -0.02em; font-size: 15px; }
     .logo-mark {
-      width: 30px; height: 30px;
+      width: 32px; height: 32px;
       display: grid; place-items: center;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 9px;
       font-family: "JetBrains Mono", monospace;
-      font-size: 12px; font-weight: 500;
+      font-size: 12px; font-weight: 600;
       color: var(--accent);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
-    .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--muted); font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); transition: color 0.15s; }
     .nav-cta {
-      font-size: 13px; font-weight: 600;
-      padding: 7px 16px;
+      font-size: 13.5px; font-weight: 600;
+      padding: 8px 18px;
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
       transition: all 0.2s;
+      color: var(--text);
     }
-    .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-cta:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 12px var(--accent-dim); }
 
     /* ---------- Sections ---------- */
-    section { padding: 96px 0; scroll-margin-top: 64px; }
+    section { padding: 100px 0; scroll-margin-top: 68px; }
     .kicker {
       font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
+      font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 0.22em;
       color: var(--accent);
       margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
-    .section-sub { color: var(--muted); margin-top: 12px; max-width: 560px; }
+    .kicker::before {
+      content: "//";
+      opacity: 0.6;
+    }
+    h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
+    .section-sub { color: var(--muted); margin-top: 14px; max-width: 600px; font-size: 16px; line-height: 1.6; }
 
     /* ---------- Hero ---------- */
-    .hero { padding: 180px 0 110px; }
+    .hero { padding: 160px 0 90px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
     .badge {
       display: inline-flex; align-items: center; gap: 9px;
-      padding: 6px 15px;
+      padding: 6px 16px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 13px; font-weight: 500;
       color: var(--muted);
       background: var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
     .dot {
       width: 8px; height: 8px;
@@ -128,87 +169,168 @@
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45); }
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
       70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
     h1 {
-      font-size: clamp(44px, 8vw, 78px);
+      font-size: clamp(40px, 6.5vw, 68px);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-top: 26px;
-      background: linear-gradient(180deg, #ffffff 30%, #a1a1aa 100%);
+      letter-spacing: -0.035em;
+      line-height: 1.06;
+      margin-top: 22px;
+      background: linear-gradient(180deg, #ffffff 40%, #a1a1aa 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     h1 .accent { -webkit-text-fill-color: var(--accent); }
     .hero-tagline {
-      font-size: clamp(18px, 2.5vw, 22px);
+      font-size: clamp(17px, 2.2vw, 20px);
       color: var(--muted);
       margin-top: 20px;
-      max-width: 640px;
+      line-height: 1.55;
     }
     .hero-tagline strong { color: var(--text); font-weight: 600; }
-    .cta-row { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+    .cta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; gap: 9px;
       padding: 12px 24px;
       border-radius: 10px;
-      font-size: 15px; font-weight: 600;
-      transition: all 0.2s;
+      font-size: 14.5px; font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-primary {
       background: var(--accent);
       color: #052e1c;
-      box-shadow: 0 8px 24px -8px rgba(52, 211, 153, 0.5);
+      box-shadow: 0 10px 28px -10px rgba(52, 211, 153, 0.55);
     }
-    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
-    .btn-ghost { border: 1px solid var(--border); color: var(--text); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .socials { display: flex; gap: 22px; margin-top: 44px; }
-    .socials a { color: var(--muted); transition: color 0.2s; display: inline-flex; }
-    .socials a:hover { color: var(--accent); }
-    .socials svg { width: 21px; height: 21px; fill: currentColor; }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px -10px rgba(52, 211, 153, 0.7);
+    }
+    .btn-ghost {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -8px var(--accent-dim);
+    }
+    .socials { display: flex; gap: 20px; margin-top: 36px; }
+    .socials a { color: var(--muted); transition: color 0.15s, transform 0.15s; display: inline-flex; }
+    .socials a:hover { color: var(--accent); transform: translateY(-1px); }
+    .socials svg { width: 20px; height: 20px; fill: currentColor; }
 
-    /* ---------- Projects ---------- */
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 44px; }
+    /* ---------- Terminal Widget ---------- */
+    .terminal-card {
+      background: #0b0b0e;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px var(--accent-dim);
+      overflow: hidden;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12.5px;
+      line-height: 1.65;
+    }
+    .terminal-header {
+      background: #131317;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .term-red { background: #ff5f56; }
+    .term-yellow { background: #ffbd2e; }
+    .term-green { background: #27c93f; }
+    .term-title { margin-left: 8px; color: var(--muted-dark); font-size: 11px; letter-spacing: 0.05em; }
+    .terminal-body {
+      padding: 20px;
+      color: #c9d1d9;
+    }
+    .term-cmd { color: #58a6ff; }
+    .term-prompt { color: var(--muted-dark); user-select: none; margin-right: 6px; }
+    .term-success { color: var(--accent); }
+    .term-info { color: #a5d6ff; }
+    .term-purple { color: #d2a8ff; }
+    .term-dim { color: #6e7681; }
+
+    /* ---------- Metrics Strip ---------- */
+    .metrics-bar {
+      margin-top: 30px;
+      padding: 26px 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    .metric-item { display: flex; flex-direction: column; }
+    .metric-num {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    .metric-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ---------- Projects Grid ---------- */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      padding: 30px;
       display: flex; flex-direction: column;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.2s;
+      position: relative;
     }
     .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(52, 211, 153, 0.45);
-      box-shadow: 0 12px 32px -12px rgba(52, 211, 153, 0.18);
+      transform: translateY(-4px);
+      border-color: rgba(52, 211, 153, 0.5);
+      box-shadow: 0 16px 40px -14px rgba(52, 211, 153, 0.2);
     }
-    .card-wide { grid-column: 1 / -1; position: relative; overflow: hidden; }
+    .card-wide {
+      grid-column: 1 / -1;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(16, 16, 20, 0.95) 100%);
+    }
     .card-wide::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0.7;
     }
     .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .card h3 { font-size: 18px; font-weight: 650; letter-spacing: -0.01em; }
+    .card h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; color: #fff; }
     .pill {
       font-family: "JetBrains Mono", monospace;
-      font-size: 10.5px;
-      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 11px;
       border-radius: 999px;
       white-space: nowrap;
     }
     .pill-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(52, 211, 153, 0.3); }
-    .pill-muted { color: var(--muted); border: 1px solid var(--border); }
-    .card p { color: var(--muted); font-size: 14.5px; margin-top: 12px; flex-grow: 1; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .pill-muted { color: var(--muted); border: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+    .card p { color: var(--muted); font-size: 14.5px; margin-top: 14px; line-height: 1.65; flex-grow: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
     .tag {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
@@ -216,43 +338,70 @@
       border: 1px solid var(--border);
       border-radius: 999px;
       padding: 3px 11px;
+      background: rgba(255,255,255,0.015);
     }
-    .card-links { display: flex; gap: 18px; margin-top: 20px; }
+    .card-links { display: flex; gap: 20px; margin-top: 24px; }
     .card-links a {
       font-family: "JetBrains Mono", monospace;
-      font-size: 12.5px;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .card-links a:hover { text-decoration: underline; }
-    .all-repos { margin-top: 32px; text-align: center; }
-    .all-repos a { color: var(--muted); font-size: 14.5px; }
+    .all-repos { margin-top: 36px; text-align: center; }
+    .all-repos a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
     .all-repos a:hover { color: var(--accent); }
 
     /* ---------- Services ---------- */
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 44px; }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
     .service {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
-      transition: border-color 0.2s;
+      padding: 30px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .service:hover { border-color: rgba(52, 211, 153, 0.45); }
+    .service:hover {
+      border-color: rgba(52, 211, 153, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0,0,0,0.5);
+    }
     .service-num {
       font-family: "JetBrains Mono", monospace;
       font-size: 13px;
+      font-weight: 600;
       color: var(--accent);
+      background: var(--accent-dim);
+      padding: 4px 10px;
+      border-radius: 6px;
     }
-    .service h3 { font-size: 17px; font-weight: 650; margin-top: 16px; }
-    .service p { color: var(--muted); font-size: 14.5px; margin-top: 10px; }
+    .service h3 { font-size: 18px; font-weight: 700; margin-top: 18px; color: #fff; }
+    .service p { color: var(--muted); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
+
+    /* ---------- Process / Engineering Principles ---------- */
+    .process-strip {
+      margin-top: 50px;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .process-item h4 { font-size: 16px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .process-item p { color: var(--muted); font-size: 14px; margin-top: 8px; line-height: 1.6; }
 
     /* ---------- Contact ---------- */
     .contact { text-align: center; }
     .contact .section-sub { margin-left: auto; margin-right: auto; }
-    .contact .cta-row { justify-content: center; }
+    .contact .cta-row { justify-content: center; margin-top: 36px; }
 
     /* ---------- Footer ---------- */
-    footer { border-top: 1px solid var(--border); padding: 32px 0; }
+    footer { border-top: 1px solid var(--border); padding: 36px 0; }
     .footer-inner {
       display: flex; align-items: center; justify-content: space-between;
       gap: 16px; flex-wrap: wrap;
@@ -261,12 +410,15 @@
     .footer-inner .mono { font-size: 12.5px; }
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 820px) {
-      .grid, .services-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .grid, .services-grid, .process-strip { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      section { padding: 72px 0; }
-      .hero { padding: 140px 0 80px; }
+      section { padding: 75px 0; }
+      .hero { padding: 130px 0 60px; }
     }
+    
     /* ---------- Reveal on scroll ---------- */
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -293,9 +445,10 @@
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#services">Services</a>
+        <a href="#principles">How I Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="nav-cta">Hire Me</a>
+      <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
     </div>
   </nav>
 
@@ -304,26 +457,69 @@
     <!-- ===================== HERO ===================== -->
     <header class="hero">
       <div class="container">
-        <span class="badge"><span class="dot"></span> Available for freelance projects</span>
-        <h1>Aditya Arya<span class="accent">.</span></h1>
-        <p class="hero-tagline">
-          I build <strong>AI agents</strong>, <strong>MCP servers</strong> &amp;
-          <strong>automations</strong> that do real work — so you can focus on yours.
-        </p>
-        <div class="cta-row">
-          <a href="#work" class="btn btn-primary">View My Work</a>
-          <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-ghost">Book a Call</a>
+        <div class="hero-grid">
+          <div>
+            <span class="badge"><span class="dot"></span> Available for high-impact sprint projects</span>
+            <h1>Aditya Arya<span class="accent">.</span></h1>
+            <p class="hero-tagline">
+              AI Product &amp; Agent Architect. I build <strong>local-first multi-agent systems</strong>, production <strong>MCP servers</strong>, and <strong>24/7 autonomous pipelines</strong> that deliver real engineering leverage.
+            </p>
+            <div class="cta-row">
+              <a href="#work" class="btn btn-primary">Explore Featured Work</a>
+              <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-ghost">Schedule a Call ↗</a>
+            </div>
+            <div class="socials">
+              <a href="https://github.com/adityarya24" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://x.com/adityarya_ai" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Terminal Preview Widget -->
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="term-dot term-red"></span>
+              <span class="term-dot term-yellow"></span>
+              <span class="term-dot term-green"></span>
+              <span class="term-title">mindsync-orchestration ~ bash</span>
+            </div>
+            <div class="terminal-body">
+              <div><span class="term-prompt">$</span><span class="term-cmd">mindsync-dispatch run auto "refactor auth schema" \</span></div>
+              <div style="padding-left: 14px;"><span class="term-cmd">--capability coding --worktree --on-limit handoff</span></div>
+              <div class="term-dim" style="margin-top: 8px;">[1] Analyzing task capability requirements...</div>
+              <div><span class="term-success">⚡ Capability Router:</span> <span class="term-info">Selected Claude Code (Deep Architecture)</span></div>
+              <div><span class="term-purple">🛡️ Conflict Shield:</span> <span>Paths claimed across 3 active workers</span></div>
+              <div><span class="term-purple">🧠 Vector Memory:</span> <span>Found 2 relevant architectural decisions</span></div>
+              <div class="term-dim" style="margin-top: 4px;">--- Executing task in isolated git worktree ---</div>
+              <div><span class="term-success">✅ Task Completed:</span> <span class="term-info">0 collisions · Clean PR generated</span></div>
+            </div>
+          </div>
         </div>
-        <div class="socials">
-          <a href="https://github.com/adityarya24" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://x.com/adityarya_ai" target="_blank" rel="noopener" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-          </a>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-bar">
+          <div class="metric-item">
+            <span class="metric-num">15+</span>
+            <span class="metric-label">Production MCP tools shipped &amp; active</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">35+ Pg</span>
+            <span class="metric-label">Astrological report engine in production</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Local-first &amp; deterministic systems</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">24/7</span>
+            <span class="metric-label">Autonomous VPS fleet orchestration</span>
+          </div>
         </div>
       </div>
     </header>
@@ -331,19 +527,20 @@
     <!-- ===================== PROJECTS ===================== -->
     <section id="work">
       <div class="container">
-        <p class="kicker">// Selected Work</p>
+        <p class="kicker">Selected Work</p>
         <h2>Things I've built &amp; shipped.</h2>
-        <p class="section-sub">A live astrology platform, agent infrastructure, and domain-specific MCP servers — designed, built and shipped end-to-end.</p>
+        <p class="section-sub">A production astrology D2C platform, multi-agent orchestration infrastructure, and domain-specific MCP suites — designed, built, and shipped end-to-end.</p>
 
         <div class="grid">
+          <!-- Featured 1: AskPanditji -->
           <article class="card card-wide">
             <div class="card-top">
               <h3>AskPanditji</h3>
-              <span class="pill pill-accent">Live Product</span>
+              <span class="pill pill-accent">Live D2C Product</span>
             </div>
-            <p>Vedic astrology platform running live at askpanditji.co.in — powered by my own astro-skill engine. Deterministic kundali, dasha, panchang and PDF reports, deployed and maintained entirely by me.</p>
+            <p>Full-stack Vedic astrology platform running live at askpanditji.co.in — powered by my own deterministic astro-skill engine. Generates personalized 35+ page comprehensive life readings, dasha timelines, and chart-driven remedies with zero external astrology API dependencies.</p>
             <div class="tags">
-              <span class="tag">Production</span><span class="tag">astro-skill Engine</span><span class="tag">Python</span><span class="tag">Swiss Ephemeris</span>
+              <span class="tag">Production</span><span class="tag">astro-skill Engine</span><span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">Automated PDF Pipeline</span>
             </div>
             <div class="card-links">
               <a href="https://askpanditji.co.in" target="_blank" rel="noopener">Visit Site ↗</a>
@@ -351,14 +548,15 @@
             </div>
           </article>
 
+          <!-- Project 2: MindSync AI -->
           <article class="card">
             <div class="card-top">
               <h3>MindSync AI</h3>
               <span class="pill pill-accent">PyPI Package</span>
             </div>
-            <p>Local-first MCP orchestration for coding agents — automatic task routing, shared memory across sessions, conflict prevention, and optional VPS sync.</p>
+            <p>Local-first Model Context Protocol (MCP) orchestrator for coding agents (Codex, Claude, Gemini, Grok, Cursor, OpenCode). Capability-based routing, vector memory via <code>sqlite-vec</code>, path locking, and cross-provider quota handoff.</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Multi-Agent</span><span class="tag">Local-first</span>
+              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Multi-Agent</span><span class="tag">sqlite-vec</span><span class="tag">Local-First</span>
             </div>
             <div class="card-links">
               <a href="https://github.com/adityarya24/mindsync-ai" target="_blank" rel="noopener">GitHub ↗</a>
@@ -366,45 +564,63 @@
             </div>
           </article>
 
+          <!-- Project 3: File Organizer -->
+          <article class="card">
+            <div class="card-top">
+              <h3>Smart File Organizer</h3>
+              <span class="pill pill-accent">Open Source</span>
+            </div>
+            <p>Zero-dependency, background-capable file organizer and daemon for Downloads and Desktop. Features active download locking, collision-safe renaming, transaction rollback (<code>--undo</code>), and Windows Startup service integration.</p>
+            <div class="tags">
+              <span class="tag">Python 3.8+</span><span class="tag">Background Daemon</span><span class="tag">Desktop Automation</span><span class="tag">Zero Dependencies</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/adityarya24/file-organizer" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- Project 4: astro-skill -->
           <article class="card">
             <div class="card-top">
               <h3>astro-skill</h3>
               <span class="pill pill-muted">Agent Skill + MCP</span>
             </div>
-            <p>Open-source Vedic astrology engine as an agent skill and MCP server — deterministic kundali, dasha, panchang and guna milan via Swiss Ephemeris. No API keys.</p>
+            <p>Open-source deterministic Vedic astrology engine and MCP server — high-precision Swiss Ephemeris astronomical calculations for kundali, dasha timelines, panchang, and guna milan with zero external API keys.</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">PDF Reports</span>
+              <span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">Astronomical Algorithms</span><span class="tag">PDF Engine</span>
             </div>
             <div class="card-links">
               <a href="https://github.com/adityarya24/astro-skill" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </article>
 
+          <!-- Project 5: GWS Marketing -->
           <article class="card">
             <div class="card-top">
-              <h3>Trading MCP Server</h3>
-              <span class="pill pill-muted">Fintech</span>
-            </div>
-            <p>MCP server for Indian markets — morning briefs, end-of-day reviews, and trade journaling. Data &amp; analytics only, no signals.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Market Data</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/trading-mcp-server" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-top">
-              <h3>GWS Marketing</h3>
+              <h3>GWS Marketing MCP</h3>
               <span class="pill pill-accent">15 MCP Tools</span>
             </div>
-            <p>Agent-facing MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar and Drive, queried straight from any coding agent. Scoped OAuth and read-only by default; the only write action is a Gmail draft that stays human-reviewed.</p>
+            <p>Agent-facing MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar, and Drive queried directly by coding agents. Features scoped OAuth and human-in-the-loop email draft safeguards.</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Scoped OAuth</span><span class="tag">GA4 / GSC</span>
+              <span class="tag">Python</span><span class="tag">MCP Server</span><span class="tag">Scoped OAuth</span><span class="tag">GA4 / GSC Analytics</span>
             </div>
             <div class="card-links">
               <a href="https://github.com/adityarya24/gws-marketing" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- Project 6: Trading MCP Server -->
+          <article class="card">
+            <div class="card-top">
+              <h3>Trading MCP Server</h3>
+              <span class="pill pill-muted">Fintech &amp; Markets</span>
+            </div>
+            <p>Financial market MCP server tailored for Indian equities (NSE/BSE) — delivers automated morning market briefs, end-of-day sector scans, and structured trade journaling directly into AI agent context.</p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Market Analytics</span><span class="tag">NSE / BSE Data</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/adityarya24/trading-mcp-server" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </article>
         </div>
@@ -418,35 +634,56 @@
     <!-- ===================== SERVICES ===================== -->
     <section id="services">
       <div class="container">
-        <p class="kicker">// Services</p>
-        <h2>What I can build for you.</h2>
+        <p class="kicker">Services</p>
+        <h2>What I build for clients &amp; teams.</h2>
         <p class="section-sub">
-          From idea to deployed system — I handle the full stack of agentic automation.
-          Built for founders, agencies, and small teams that need agents running in
-          production, not demos. Most engagements are focused one-to-two-week sprints
-          with clear deliverables.
+          From architecture to production deployment — I build reliable, production-grade agentic systems for founders, engineering teams, and agencies. Most engagements are structured as 1-to-2 week focused sprints.
         </p>
 
         <div class="services-grid">
           <div class="service">
             <span class="service-num">01</span>
-            <h3>AI Agent Development</h3>
-            <p>Custom agents that plan, use tools, and finish real tasks — coding assistants, research bots, ops copilots, and multi-agent teams that coordinate safely.</p>
+            <h3>Multi-Agent System Architecture</h3>
+            <p>Custom agent orchestrators that plan, use tools, manage memory, and complete complex workflows without recursive loops, hallucinations, or file collision hazards.</p>
           </div>
           <div class="service">
             <span class="service-num">02</span>
-            <h3>MCP Servers &amp; Integrations</h3>
-            <p>Expose your product, data, or internal tools to Claude, GPT, Gemini and other agents through clean, well-documented Model Context Protocol servers.</p>
+            <h3>Custom MCP Servers &amp; Tooling</h3>
+            <p>Expose your proprietary data, internal APIs, or SaaS backends directly to Claude, ChatGPT, Gemini, and Cursor over secure, production-hardened Model Context Protocol servers.</p>
           </div>
           <div class="service">
             <span class="service-num">03</span>
-            <h3>Workflow Automation</h3>
-            <p>Connect APIs, schedules, and triggers so repetitive work runs itself — Telegram bots, reporting pipelines, dashboards, and background jobs.</p>
+            <h3>Autonomous 24/7 Pipelines</h3>
+            <p>End-to-end automation pipelines — Telegram/Slack control planes, headless browser automation, real-time data ingestion, and resilient background daemons.</p>
           </div>
           <div class="service">
             <span class="service-num">04</span>
-            <h3>Licence the Astro Report Engine</h3>
-            <p>A finished, client-ready Janma Patrika for your platform — bilingual narrative for every house, dasha and gochar, a chart-driven strength score, and prioritised remedies. Built on my open-source astro-skill engine and already running in production at AskPanditji.</p>
+            <h3>Vedic Astrology Engine Licensing</h3>
+            <p>Deploy a client-ready Janma Patrika microservice into your platform — bilingual house narratives, dasha timelines, strength scores, and PDF reports powered by the AskPanditji engine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW I WORK ===================== -->
+    <section id="principles">
+      <div class="container">
+        <p class="kicker">How I Work</p>
+        <h2>Engineering principles.</h2>
+        <p class="section-sub">Zero fluff, practical execution, and systems designed to run reliably in production.</p>
+
+        <div class="process-strip">
+          <div class="process-item">
+            <h4>⚡ Rapid 1–2 Week Sprints</h4>
+            <p>Clear deliverables, defined scopes, and fast turnaround. You get working production software in days, not speculative multi-month roadmaps.</p>
+          </div>
+          <div class="process-item">
+            <h4>🔒 Local-First &amp; Safe</h4>
+            <p>Architectures prioritize data privacy, local execution, explicit tool permissions, and zero lock-in to proprietary cloud agent platforms.</p>
+          </div>
+          <div class="process-item">
+            <h4>🛠️ Full-Stack Ownership</h4>
+            <p>From mathematical algorithms and backend daemons to database schemas and polished user interfaces — I handle the entire engineering cycle.</p>
           </div>
         </div>
       </div>
@@ -455,16 +692,15 @@
     <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="contact">
       <div class="container">
-        <p class="kicker">// Contact</p>
+        <p class="kicker">Contact</p>
         <h2>Got a workflow worth automating?</h2>
         <p class="section-sub">
-          Whether it's an agent, an integration, or a full automation pipeline —
-          tell me what slows you down, and I'll build the fix.
+          Whether you need a custom agent system, an enterprise MCP server, or an end-to-end autonomous pipeline — let's discuss your project.
         </p>
         <div class="cta-row">
-          <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Intro Call</a>
-          <a href="mailto:adityaryawork@gmail.com" class="btn btn-ghost">Email Me</a>
-          <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+          <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-primary">Book a 1:1 Intro Call ↗</a>
+          <a href="mailto:adityaryawork@gmail.com" class="btn btn-ghost">adityaryawork@gmail.com</a>
+          <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
         </div>
       </div>
     </section>
@@ -474,14 +710,13 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Aditya Arya. All rights reserved.</span>
-      <span class="mono">built with plain HTML, CSS &amp; vanilla JS <span class="accent">— no frameworks harmed</span></span>
+      <span class="mono">Engineered with plain HTML, CSS &amp; vanilla JS <span class="accent">— zero bloat</span></span>
     </div>
   </footer>
 
   <script>
     // Progressive enhancement: reveal cards/services on scroll.
-    // Classes are added here so the page stays fully visible without JS.
-    const revealTargets = document.querySelectorAll(".card, .service, .kicker, h2, .section-sub");
+    const revealTargets = document.querySelectorAll(".card, .service, .process-item, .metric-item, .terminal-card, .kicker, h2, .section-sub");
     revealTargets.forEach((el) => el.classList.add("reveal"));
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
@@ -490,7 +725,7 @@
           observer.unobserve(entry.target);
         }
       }
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     revealTargets.forEach((el) => observer.observe(el));
   </script>
 
