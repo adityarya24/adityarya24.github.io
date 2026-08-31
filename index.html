@@ -298,7 +298,20 @@
       display: flex; flex-direction: column;
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.2s;
       position: relative;
+      overflow: hidden;
     }
+    .card::after, .service::after, .process-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(52, 211, 153, 0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .card:hover::after, .service:hover::after, .process-item:hover::after { opacity: 1; }
     .card:hover {
       transform: translateY(-4px);
       border-color: rgba(52, 211, 153, 0.5);
@@ -317,7 +330,7 @@
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
-    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; z-index: 2; }
     .card h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; color: #fff; }
     .pill {
       font-family: "JetBrains Mono", monospace;
@@ -328,9 +341,10 @@
       white-space: nowrap;
     }
     .pill-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .pill-star { background: rgba(251, 191, 36, 0.12); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); font-weight: 600; }
     .pill-muted { color: var(--muted); border: 1px solid var(--border); background: rgba(255,255,255,0.02); }
-    .card p { color: var(--muted); font-size: 14.5px; margin-top: 14px; line-height: 1.65; flex-grow: 1; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .card p { color: var(--muted); font-size: 14.5px; margin-top: 14px; line-height: 1.65; flex-grow: 1; position: relative; z-index: 2; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; position: relative; z-index: 2; }
     .tag {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
@@ -340,7 +354,7 @@
       padding: 3px 11px;
       background: rgba(255,255,255,0.015);
     }
-    .card-links { display: flex; gap: 20px; margin-top: 24px; }
+    .card-links { display: flex; gap: 20px; margin-top: 24px; position: relative; z-index: 2; }
     .card-links a {
       font-family: "JetBrains Mono", monospace;
       font-size: 13px;
@@ -351,6 +365,67 @@
       gap: 4px;
     }
     .card-links a:hover { text-decoration: underline; }
+
+    /* Featured Wide Card Layout */
+    .card-featured-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .card-featured-content { display: flex; flex-direction: column; }
+    .media-frame {
+      background: #060608;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.65);
+      transition: border-color 0.2s;
+    }
+    .media-frame:hover { border-color: rgba(52, 211, 153, 0.4); }
+    .media-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .media-caption {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      color: var(--muted);
+      background: rgba(16, 16, 20, 0.95);
+      padding: 8px 12px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    /* Mini Media Thumbnail (AskPanditji) */
+    .card-mini-media {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 16px;
+      padding: 10px 14px;
+      background: rgba(9, 9, 12, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .chart-thumb {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #141417;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+    .mini-media-text { display: flex; flex-direction: column; gap: 2px; }
+
     .all-repos { margin-top: 36px; text-align: center; }
     .all-repos a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
     .all-repos a:hover { color: var(--accent); }
@@ -413,7 +488,7 @@
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
       .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .grid, .services-grid, .process-strip { grid-template-columns: 1fr; }
+      .grid, .services-grid, .process-strip, .card-featured-inner { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       section { padding: 75px 0; }
       .hero { padding: 130px 0 60px; }
@@ -505,6 +580,10 @@
         <!-- Metrics Strip -->
         <div class="metrics-bar">
           <div class="metric-item">
+            <span class="metric-num">★ 13</span>
+            <span class="metric-label">Stars on Agent Notch Desktop HUD</span>
+          </div>
+          <div class="metric-item">
             <span class="metric-num">15+</span>
             <span class="metric-label">Production MCP tools shipped &amp; active</span>
           </div>
@@ -516,10 +595,6 @@
             <span class="metric-num">100%</span>
             <span class="metric-label">Local-first &amp; deterministic systems</span>
           </div>
-          <div class="metric-item">
-            <span class="metric-num">24/7</span>
-            <span class="metric-label">Autonomous VPS fleet orchestration</span>
-          </div>
         </div>
       </div>
     </header>
@@ -529,18 +604,56 @@
       <div class="container">
         <p class="kicker">Selected Work</p>
         <h2>Things I've built &amp; shipped.</h2>
-        <p class="section-sub">A production astrology D2C platform, multi-agent orchestration infrastructure, and domain-specific MCP suites — designed, built, and shipped end-to-end.</p>
+        <p class="section-sub">Ambient developer HUDs, production astrology engines, and multi-agent MCP infrastructure — designed, built, and shipped for real workloads.</p>
 
         <div class="grid">
-          <!-- Featured 1: AskPanditji -->
+          <!-- Featured Hero Card: Agent Notch -->
           <article class="card card-wide">
+            <div class="card-featured-inner">
+              <div class="card-featured-content">
+                <div class="card-top">
+                  <h3>⚡ Agent Notch</h3>
+                  <div style="display: flex; gap: 6px; align-items: center;">
+                    <span class="pill pill-star">★ 13 Stars</span>
+                    <span class="pill pill-accent">Desktop HUD</span>
+                  </div>
+                </div>
+                <p>Ambient right-edge desktop HUD for Windows that monitors live token quotas, session rate-limits, and weekly usage windows across Claude Code, Codex, Gemini CLI, Grok, and Cursor. Built with 100% click-through transparency and zero telemetry.</p>
+                <div class="tags">
+                  <span class="tag">Electron</span><span class="tag">React 19</span><span class="tag">Tailwind CSS v4</span><span class="tag">MindSync Handoff</span><span class="tag">Windows 10/11</span>
+                </div>
+                <div class="card-links">
+                  <a href="https://github.com/adityarya24/agent-notch" target="_blank" rel="noopener">GitHub (★ 13) ↗</a>
+                  <a href="https://github.com/adityarya24/agent-notch#readme" target="_blank" rel="noopener">Documentation ↗</a>
+                </div>
+              </div>
+              <div class="card-featured-media">
+                <div class="media-frame">
+                  <img src="assets/agent-notch-card.gif" alt="Agent Notch HUD live quota rings and handoff demo" loading="lazy" />
+                  <div class="media-caption">Live Quota Rings &amp; MindSync Handoff Flash</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AskPanditji -->
+          <article class="card">
             <div class="card-top">
               <h3>AskPanditji</h3>
               <span class="pill pill-accent">Live D2C Product</span>
             </div>
             <p>Full-stack Vedic astrology platform running live at askpanditji.co.in — powered by my own deterministic astro-skill engine. Generates personalized 35+ page comprehensive life readings, dasha timelines, and chart-driven remedies with zero external astrology API dependencies.</p>
+            
+            <div class="card-mini-media">
+              <img src="assets/sample-lagna-chart.png" alt="Astronomical Vedic Chart" class="chart-thumb" loading="lazy" />
+              <div class="mini-media-text">
+                <div class="mono" style="font-size: 11px; color: var(--accent); font-weight: 600;">Deterministic Swiss Ephemeris Engine</div>
+                <div style="font-size: 11.5px; color: var(--muted);">Full bilingual narrative &amp; high-precision Kundali charts</div>
+              </div>
+            </div>
+
             <div class="tags">
-              <span class="tag">Production</span><span class="tag">astro-skill Engine</span><span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">Automated PDF Pipeline</span>
+              <span class="tag">Production</span><span class="tag">astro-skill Engine</span><span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">PDF Pipeline</span>
             </div>
             <div class="card-links">
               <a href="https://askpanditji.co.in" target="_blank" rel="noopener">Visit Site ↗</a>
@@ -548,7 +661,7 @@
             </div>
           </article>
 
-          <!-- Project 2: MindSync AI -->
+          <!-- Project 3: MindSync AI -->
           <article class="card">
             <div class="card-top">
               <h3>MindSync AI</h3>
@@ -556,15 +669,15 @@
             </div>
             <p>Local-first Model Context Protocol (MCP) orchestrator for coding agents (Codex, Claude, Gemini, Grok, Cursor, OpenCode). Capability-based routing, vector memory via <code>sqlite-vec</code>, path locking, and cross-provider quota handoff.</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Multi-Agent</span><span class="tag">sqlite-vec</span><span class="tag">Local-First</span>
+              <span class="tag">Python</span><span class="tag">MCP Protocol 1.27+</span><span class="tag">Multi-Agent</span><span class="tag">sqlite-vec</span><span class="tag">Local-First</span>
             </div>
             <div class="card-links">
               <a href="https://github.com/adityarya24/mindsync-ai" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://pypi.org/project/mindsync-ai/" target="_blank" rel="noopener">PyPI ↗</a>
+              <a href="https://pypi.org/project/mindsync-ai/" target="_blank" rel="noopener">PyPI (Live) ↗</a>
             </div>
           </article>
 
-          <!-- Project 3: File Organizer -->
+          <!-- Project 4: Smart File Organizer -->
           <article class="card">
             <div class="card-top">
               <h3>Smart File Organizer</h3>
@@ -579,7 +692,7 @@
             </div>
           </article>
 
-          <!-- Project 4: astro-skill -->
+          <!-- Project 5: astro-skill -->
           <article class="card">
             <div class="card-top">
               <h3>astro-skill</h3>
@@ -594,13 +707,13 @@
             </div>
           </article>
 
-          <!-- Project 5: GWS Marketing -->
+          <!-- Project 6: GWS Marketing -->
           <article class="card">
             <div class="card-top">
               <h3>GWS Marketing MCP</h3>
               <span class="pill pill-accent">15 MCP Tools</span>
             </div>
-            <p>Agent-facing MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar, and Drive queried directly by coding agents. Features scoped OAuth and human-in-the-loop email draft safeguards.</p>
+            <p>Agent-facing enterprise MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar, and Drive queried directly by coding agents with human-in-the-loop email draft safeguards.</p>
             <div class="tags">
               <span class="tag">Python</span><span class="tag">MCP Server</span><span class="tag">Scoped OAuth</span><span class="tag">GA4 / GSC Analytics</span>
             </div>
@@ -609,7 +722,7 @@
             </div>
           </article>
 
-          <!-- Project 6: Trading MCP Server -->
+          <!-- Project 7: Trading MCP Server -->
           <article class="card">
             <div class="card-top">
               <h3>Trading MCP Server</h3>
@@ -715,7 +828,7 @@
   </footer>
 
   <script>
-    // Progressive enhancement: reveal cards/services on scroll.
+    // Progressive enhancement: reveal cards/services on scroll
     const revealTargets = document.querySelectorAll(".card, .service, .process-item, .metric-item, .terminal-card, .kicker, h2, .section-sub");
     revealTargets.forEach((el) => el.classList.add("reveal"));
     const observer = new IntersectionObserver((entries) => {
@@ -727,6 +840,16 @@
       }
     }, { threshold: 0.1 });
     revealTargets.forEach((el) => observer.observe(el));
+
+    // Linear-style Spotlight Cursor Glow on cards & interactive containers
+    const spotlightCards = document.querySelectorAll(".card, .service, .process-item, .terminal-card");
+    spotlightCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+        card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+      });
+    });
   </script>
 
 </body>
