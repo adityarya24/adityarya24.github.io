@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aditya Arya — Selected Engineering Work</title>
+  <meta name="description" content="Independent engineering projects by Aditya Arya: Python automation, MCP integrations, agent orchestration and desktop tools.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://adityarya.dev/showcase/">
+  <meta property="og:title" content="Aditya Arya — Selected Engineering Work">
+  <meta property="og:description" content="Explore MindSync AI, GWS Marketing MCP, Agent Notch and AskPanditJi. Independent projects in API integration, automation and developer tooling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adityarya.dev/showcase/">
+  <meta property="og:image" content="https://adityarya.dev/assets/agent-notch-handoff.webp">
+  <meta property="og:image:alt" content="Agent Notch desktop usage monitor">
+  <style>
+    :root { color-scheme: dark; --bg:#09090b; --panel:#121216; --line:#303037; --text:#ededf0; --muted:#b0b0ba; --accent:#6ee7b7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .wrap { max-width:1080px; margin:auto; padding:0 24px; }
+    header { border-bottom:1px solid var(--line); }
+    .masthead { padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .name { font-weight:700; letter-spacing:-.02em; }
+    .label { color:var(--accent); font:600 12px/1.5 ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; }
+    .hero { padding:76px 0 46px; max-width:790px; }
+    h1 { font-size:clamp(36px,6vw,62px); line-height:1.08; letter-spacing:-.055em; margin:18px 0 24px; }
+    h1 span { color:var(--accent); }
+    .intro { font-size:20px; color:var(--muted); max-width:700px; }
+    .notice { margin:26px 0 0; padding:16px 20px; border-left:3px solid var(--accent); background:#11221b; font-size:15px; }
+    nav { display:flex; gap:12px; flex-wrap:wrap; margin:0 0 36px; }
+    a { color:var(--text); text-decoration:none; }
+    nav a { padding:8px 14px; border:1px solid var(--line); border-radius:6px; font-size:14px; }
+    nav a:hover, nav a:focus-visible { border-color:var(--accent); color:var(--accent); }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    article { padding:28px; background:var(--panel); border:1px solid var(--line); border-radius:14px; scroll-margin-top:20px; }
+    h2 { margin:9px 0 16px; font-size:29px; letter-spacing:-.035em; line-height:1.2; }
+    article p { color:var(--muted); margin:0 0 20px; }
+    dl { margin:0; }
+    dt { margin-top:18px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); font-weight:700; }
+    dd { margin:5px 0 0; font-size:15px; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin:24px 0 0; padding:0; list-style:none; }
+    .tags li { background:#202026; border:1px solid var(--line); border-radius:4px; padding:4px 9px; font-size:12px; }
+    figure { margin:24px 0 0; }
+    figure img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:8px; }
+    figure.chart img { width:200px; max-width:100%; }
+    figcaption { color:var(--muted); font-size:12px; margin-top:8px; }
+    .closing { margin:36px 0 64px; padding:28px; border:1px solid var(--line); border-radius:14px; }
+    .closing h2 { font-size:23px; }
+    .closing p { color:var(--muted); margin-bottom:0; }
+    footer { border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--muted); }
+    @media (max-width:700px) { .grid { grid-template-columns:1fr; } .hero { padding-top:44px; } article { padding:23px; } .masthead { align-items:flex-start; flex-direction:column; gap:5px; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><div class="masthead"><span class="name">Aditya Arya</span><span class="label">Selected engineering work</span></div></div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="label">Python · MCP · Developer tools</div>
+      <h1 id="page-title">Useful integrations.<br><span>Working software.</span></h1>
+      <p class="intro">I build tools that connect AI assistants to APIs, coordinate coding workflows and turn structured data into useful outputs.</p>
+      <p class="notice">These are my own self-funded products and open-source projects—not paid client case studies. Please keep project discussions on the marketplace where you found this portfolio.</p>
+    </section>
+    <nav aria-label="Jump to a project">
+      <a href="#mindsync">MindSync AI</a><a href="#gws">GWS Marketing MCP</a><a href="#notch">Agent Notch</a><a href="#apj">AskPanditJi</a>
+    </nav>
+    <div class="grid">
+      <article id="mindsync">
+        <div class="label">01 / Agent orchestration</div>
+        <h2>MindSync AI</h2>
+        <p>A local-first MCP orchestrator for coding agents, released as an open-source Python package.</p>
+        <dl>
+          <dt>The problem</dt><dd>Multiple coding agents need shared context and explicit ownership of the files they work on.</dd>
+          <dt>What I built</dt><dd>Capability-based routing, persistent vector memory using sqlite-vec, path locking and cross-provider quota handoff.</dd>
+          <dt>My contribution</dt><dd>Architecture, Python implementation, agent-tool integration, tests and documentation.</dd>
+        </dl>
+        <ul class="tags" aria-label="MindSync technologies"><li>Python</li><li>Model Context Protocol</li><li>SQLite</li><li>Agent workflows</li></ul>
+      </article>
+      <article id="gws">
+        <div class="label">02 / API integration</div>
+        <h2>GWS Marketing MCP</h2>
+        <p>A Python MCP server connecting AI tools to Google Search Console, GA4 and Workspace services.</p>
+        <dl>
+          <dt>The problem</dt><dd>Marketing and workspace data lives across separate APIs with different access requirements.</dd>
+          <dt>What I built</dt><dd>Structured tools for analytics and workspace queries, scoped OAuth access and human-in-the-loop email draft safeguards.</dd>
+          <dt>My contribution</dt><dd>API integration, structured tool responses, error handling, tests and setup documentation.</dd>
+        </dl>
+        <ul class="tags" aria-label="GWS technologies"><li>Python</li><li>MCP</li><li>Google APIs</li><li>OAuth</li></ul>
+      </article>
+      <article id="notch">
+        <div class="label">03 / Desktop tooling</div>
+        <h2>Agent Notch</h2>
+        <p>A compact Windows desktop HUD for coding-agent usage, session limits and weekly quota windows.</p>
+        <dl>
+          <dt>What I built</dt><dd>An ambient edge panel with usage rings, provider details, click-through behavior and MindSync handoff integration.</dd>
+          <dt>My contribution</dt><dd>Desktop application development, interface implementation and workflow integration.</dd>
+        </dl>
+        <figure><img src="../assets/agent-notch-handoff.webp" alt="Agent Notch usage rings and coding-agent handoff demonstration" width="1200" height="908" loading="lazy"><figcaption>Application demonstration. Displayed quotas are illustrative, not client results.</figcaption></figure>
+        <ul class="tags" aria-label="Agent Notch technologies"><li>Electron</li><li>React</li><li>Tailwind CSS</li><li>Windows</li></ul>
+      </article>
+      <article id="apj">
+        <div class="label">04 / Reporting automation</div>
+        <h2>AskPanditJi</h2>
+        <p>A full-stack web product backed by my Python calculation and document-generation engine.</p>
+        <dl>
+          <dt>What I built</dt><dd>Swiss Ephemeris calculations, bilingual report output and a PDF pipeline without an external astrology API dependency.</dd>
+          <dt>My contribution</dt><dd>Web product development, backend integration, deterministic calculations and report generation.</dd>
+        </dl>
+        <figure class="chart"><img src="../assets/sample-lagna-chart.png" alt="Sample chart layout generated by the reporting engine" width="592" height="592" loading="lazy"><figcaption>Sample chart layout; no customer details shown.</figcaption></figure>
+        <ul class="tags" aria-label="AskPanditJi technologies"><li>Python</li><li>Swiss Ephemeris</li><li>PDF generation</li><li>Web development</li></ul>
+      </article>
+    </div>
+    <section class="closing" aria-labelledby="delivery-title">
+      <h2 id="delivery-title">A focused workflow, with a clear handoff.</h2>
+      <p>My approach: define the inputs and access requirements, build the agreed integration, test the relevant paths and document how to run it. This showcase makes no claims about client revenue, rankings or guaranteed outcomes.</p>
+    </section>
+  </main>
+  <footer><div class="wrap">Aditya Arya · Independent engineering portfolio</div></footer>
+</body>
+</html>
