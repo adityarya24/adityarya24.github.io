@@ -3,862 +3,459 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aditya Arya — AI Agent Architect, MCP Servers & Autonomous Systems</title>
-  <meta name="description" content="Aditya Arya architects local-first AI multi-agent systems, production Model Context Protocol (MCP) servers, and 24/7 autonomous VPS fleets. Available for high-impact contract & sprint projects." />
+  <meta name="theme-color" content="#0b1026" />
+  <title>Aditya Arya — From a café counter to AI agents</title>
+  <meta name="description" content="Café owner, trader, then a self-taught builder. The journey from running Kitty Café in Gwalior to shipping VedPatrika, MCP servers and a fleet of AI agents, with proof at every step." />
   <link rel="canonical" href="https://adityarya.dev/" />
-  
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Aditya Arya — AI Agent Architect & MCP Builder" />
-  <meta property="og:description" content="I build multi-agent orchestrators, production MCP servers & autonomous pipelines that do real work." />
+  <meta property="og:title" content="Aditya Arya — From a café counter to AI agents" />
+  <meta property="og:description" content="Café owner, trader, then a self-taught builder. The journey, with proof at every step." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adityarya.dev/" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82873763?v=4" />
-  
-  <!-- Twitter Card -->
+  <meta property="og:image" content="https://adityarya.dev/assets/vedpatrika-home.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@adityarya_ai" />
   <meta name="twitter:creator" content="@adityarya_ai" />
-  <meta name="twitter:title" content="Aditya Arya — AI Agent Architect & MCP Builder" />
-  <meta name="twitter:description" content="Local-first multi-agent orchestration, Model Context Protocol (MCP) tools, and 24/7 autonomous agent fleets." />
-  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82873763?v=4" />
-
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2309090b'/><text x='32' y='43' font-family='monospace' font-size='26' font-weight='700' fill='%2334d399' text-anchor='middle'>AA</text></svg>" />
-  
-  <!-- Privacy-friendly analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="ab7623d2-d287-4aab-8f7e-bb1838ffde8e"></script>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Aditya Arya","url":"https://adityarya.dev/","jobTitle":"Builder of AI agents and products","sameAs":["https://github.com/adityarya24","https://www.linkedin.com/in/adityaryawork","https://x.com/adityarya_ai"]}
+  </script>
   <style>
     :root {
-      --bg: #09090b;
-      --surface: #101014;
-      --surface-raised: #16161b;
-      --border: #232328;
-      --border-subtle: rgba(228, 228, 231, 0.08);
-      --text: #e4e4e7;
-      --muted: #9f9fa8;
-      --muted-dark: #63636e;
-      --accent: #34d399;
-      --accent-hover: #10b981;
-      --accent-dim: rgba(52, 211, 153, 0.12);
-      --accent-glow: rgba(52, 211, 153, 0.25);
+      color-scheme: dark;
+      --bg: #0b1026;
+      --surface: #121a3a;
+      --text: #eef0fb;
+      --muted: #a7aecb;
+      --faint: #6f78a0;
+      --line: #232c52;
+      --accent: #fb7185;
+      --accent-soft: rgba(251, 113, 133, 0.12);
+      --chip: #161f44;
+      --ink: #fcd34d;
     }
-    
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
+      position: relative;
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
+      font: 16px/1.7 "Inter", system-ui, -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
-    
-    /* Subtle background mesh and radial glow */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(850px circle at 50% -10%, rgba(52, 211, 153, 0.08), transparent 65%),
-        radial-gradient(1000px circle at 85% 105%, rgba(16, 185, 129, 0.06), transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(228, 228, 231, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(228, 228, 231, 0.02) 1px, transparent 1px);
-      background-size: 48px 48px;
-      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 25%, transparent 80%);
-      mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 25%, transparent 80%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    ::selection { background: var(--accent); color: #052e1c; }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
-    .accent { color: var(--accent); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img { max-width: 100%; height: auto; display: block; }
 
-    /* ---------- Nav ---------- */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(9, 9, 11, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .logo { display: flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -0.02em; font-size: 15px; }
-    .logo-mark {
-      width: 32px; height: 32px;
-      display: grid; place-items: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px; font-weight: 600;
-      color: var(--accent);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
-    }
-    .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--muted); font-weight: 500; }
-    .nav-links a:hover { color: var(--accent); transition: color 0.15s; }
-    .nav-cta {
-      font-size: 13.5px; font-weight: 600;
-      padding: 8px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: all 0.2s;
-      color: var(--text);
-    }
-    .nav-cta:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 12px var(--accent-dim); }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 
-    /* ---------- Sections ---------- */
-    section { padding: 100px 0; scroll-margin-top: 68px; }
-    .kicker {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .kicker::before {
-      content: "//";
-      opacity: 0.6;
-    }
-    h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
-    .section-sub { color: var(--muted); margin-top: 14px; max-width: 600px; font-size: 16px; line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 14px; }
+    nav .mark { font: 500 13px "JetBrains Mono", monospace; color: var(--text); letter-spacing: .02em; }
+    nav .links { display: flex; gap: 18px; }
+    nav .links a { color: var(--muted); }
 
-    /* ---------- Hero ---------- */
-    .hero { padding: 160px 0 90px; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 6px 16px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 13px; font-weight: 500;
-      color: var(--muted);
-      background: var(--surface);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-    }
-    .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
-      70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-    }
+    header.intro { padding: 64px 0 40px; }
+    .eyebrow { font: 500 12px "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
     h1 {
-      font-size: clamp(40px, 6.5vw, 68px);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      line-height: 1.06;
-      margin-top: 22px;
-      background: linear-gradient(180deg, #ffffff 40%, #a1a1aa 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font: 400 clamp(38px, 7vw, 60px)/1.08 "Newsreader", Georgia, serif;
+      letter-spacing: -0.02em;
+      margin: 14px 0 22px;
     }
-    h1 .accent { -webkit-text-fill-color: var(--accent); }
-    .hero-tagline {
-      font-size: clamp(17px, 2.2vw, 20px);
-      color: var(--muted);
-      margin-top: 20px;
-      line-height: 1.55;
+    h1 em { font-style: italic; color: var(--accent); }
+    .lede { font-size: 18px; color: var(--muted); max-width: 620px; }
+    .lede strong { color: var(--text); font-weight: 600; }
+    .status {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 26px;
+      padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px;
+      font-size: 13px; color: var(--muted); background: var(--surface);
     }
-    .hero-tagline strong { color: var(--text); font-weight: 600; }
-    .cta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .btn {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-size: 14.5px; font-weight: 600;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 999px;
+      font-size: 14px; font-weight: 600; border: 1px solid var(--line); color: var(--text); background: var(--surface);
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #052e1c;
-      box-shadow: 0 10px 28px -10px rgba(52, 211, 153, 0.55);
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px -10px rgba(52, 211, 153, 0.7);
-    }
-    .btn-ghost {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px -8px var(--accent-dim);
-    }
-    .socials { display: flex; gap: 20px; margin-top: 36px; }
-    .socials a { color: var(--muted); transition: color 0.15s, transform 0.15s; display: inline-flex; }
-    .socials a:hover { color: var(--accent); transform: translateY(-1px); }
-    .socials svg { width: 20px; height: 20px; fill: currentColor; }
+    .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .btn:hover { text-decoration: none; border-color: var(--accent); }
 
-    /* ---------- Terminal Widget ---------- */
-    .terminal-card {
-      background: #0b0b0e;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px var(--accent-dim);
-      overflow: hidden;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12.5px;
-      line-height: 1.65;
-    }
-    .terminal-header {
-      background: #131317;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .term-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .term-red { background: #ff5f56; }
-    .term-yellow { background: #ffbd2e; }
-    .term-green { background: #27c93f; }
-    .term-title { margin-left: 8px; color: var(--muted-dark); font-size: 11px; letter-spacing: 0.05em; }
-    .terminal-body {
-      padding: 20px;
-      color: #c9d1d9;
-    }
-    .term-cmd { color: #58a6ff; }
-    .term-prompt { color: var(--muted-dark); user-select: none; margin-right: 6px; }
-    .term-success { color: var(--accent); }
-    .term-info { color: #a5d6ff; }
-    .term-purple { color: #d2a8ff; }
-    .term-dim { color: #6e7681; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 44px 0 16px; }
+    .facts div { background: color-mix(in srgb, var(--surface) 80%, transparent); backdrop-filter: blur(8px); padding: 18px 16px; }
+    .facts strong { display: block; font: 400 28px/1.1 "Newsreader", Georgia, serif; }
+    .facts span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.45; color: var(--muted); }
 
-    /* ---------- Metrics Strip ---------- */
-    .metrics-bar {
-      margin-top: 30px;
-      padding: 26px 32px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
-    }
-    .metric-item { display: flex; flex-direction: column; }
-    .metric-num {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: -0.03em;
-    }
-    .metric-label {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
+    h2.section { font: 400 30px/1.2 "Newsreader", Georgia, serif; margin: 72px 0 8px; letter-spacing: -0.01em; }
+    p.section-note { color: var(--muted); margin-bottom: 30px; }
 
-    /* ---------- Projects Grid ---------- */
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      display: flex; flex-direction: column;
-      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
+    /* The journey: a rail on the left, one chapter per stop */
+    .journey { position: relative; padding-left: 48px; }
+    .journey::before { content: ""; position: absolute; left: 17px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: var(--line); }
+    .rail-fill {
+      position: absolute; left: 17px; top: 8px; width: 3px; height: 0; border-radius: 3px;
+      background: linear-gradient(#a78bfa, #d4a373, #fbbf24, #34d399, #60a5fa, #f87171, #22d3ee, #f472b6);
+      background-size: 100% var(--rail-h, 100%);
     }
-    .card::after, .service::after, .process-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(52, 211, 153, 0.12), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      z-index: 1;
+    .stop { position: relative; padding-bottom: 46px; }
+    .stop { --c: var(--accent); }
+    .dot {
+      position: absolute; left: -48px; top: -2px; width: 38px; height: 38px; border-radius: 50%;
+      display: grid; place-items: center; font-size: 18px; z-index: 1;
+      background: var(--surface); border: 2px solid var(--c);
+      box-shadow: 0 0 0 5px var(--bg), 0 6px 18px color-mix(in srgb, var(--c) 30%, transparent);
     }
-    .card:hover::after, .service:hover::after, .process-item:hover::after { opacity: 1; }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(52, 211, 153, 0.5);
-      box-shadow: 0 16px 40px -14px rgba(52, 211, 153, 0.2);
+    .stop.now .dot { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { box-shadow: 0 0 0 5px var(--bg), 0 0 0 11px color-mix(in srgb, var(--c) 22%, transparent); } }
+    .stop h3 { color: var(--text); }
+    .stop .when { color: var(--c); }
+    .when { font: 500 12px "JetBrains Mono", monospace; color: var(--faint); letter-spacing: .06em; text-transform: uppercase; }
+    .stop h3 { font: 500 24px/1.25 "Newsreader", Georgia, serif; margin: 4px 0 10px; }
+    .stop p { color: var(--muted); margin-bottom: 12px; }
+    .stop p strong { color: var(--text); font-weight: 600; }
+    .lesson {
+      border-left: 3px solid var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); padding: 10px 14px; border-radius: 0 8px 8px 0;
+      font-size: 15px; color: var(--text); margin: 14px 0;
     }
-    .card-wide {
-      grid-column: 1 / -1;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, var(--surface) 0%, rgba(16, 16, 20, 0.95) 100%);
+    .lesson b { font: 500 11px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--c); display: block; margin-bottom: 2px; }
+    .proof { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .proof a, .proof span {
+      font: 500 12.5px "JetBrains Mono", monospace; padding: 5px 10px; border-radius: 6px;
+      background: var(--chip); color: var(--text); border: 1px solid var(--line);
     }
-    .card-wide::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; z-index: 2; }
-    .card h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; color: #fff; }
-    .pill {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 11px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .pill-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(52, 211, 153, 0.3); }
-    .pill-star { background: rgba(251, 191, 36, 0.12); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); font-weight: 600; }
-    .pill-muted { color: var(--muted); border: 1px solid var(--border); background: rgba(255,255,255,0.02); }
-    .card p { color: var(--muted); font-size: 14.5px; margin-top: 14px; line-height: 1.65; flex-grow: 1; position: relative; z-index: 2; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; position: relative; z-index: 2; }
-    .tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 3px 11px;
-      background: rgba(255,255,255,0.015);
-    }
-    .card-links { display: flex; gap: 20px; margin-top: 24px; position: relative; z-index: 2; }
-    .card-links a {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .card-links a:hover { text-decoration: underline; }
+    .proof a:hover { border-color: var(--accent); text-decoration: none; }
+    figure { margin: 16px 0 4px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+    figcaption { font-size: 13px; color: var(--muted); padding: 10px 14px; border-top: 1px solid var(--line); }
+    .builds { list-style: none; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .builds li { padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+    .builds li:last-child { border-bottom: 0; }
+    .builds li a { font-weight: 600; }
+    .builds li .m { font: 12px "JetBrains Mono", monospace; color: var(--faint); margin-left: 6px; }
 
-    /* Featured Wide Card Layout */
-    .card-featured-inner {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-    .card-featured-content { display: flex; flex-direction: column; }
-    .media-frame {
-      background: #060608;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.65);
-      transition: border-color 0.2s;
-    }
-    .media-frame:hover { border-color: rgba(52, 211, 153, 0.4); }
-    .media-frame img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-    .media-caption {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      color: var(--muted);
-      background: rgba(16, 16, 20, 0.95);
-      padding: 8px 12px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .principles div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+    .principles h4 { font-size: 15px; margin-bottom: 4px; }
+    .principles p { font-size: 14.5px; color: var(--muted); }
 
-    /* Mini Media Thumbnail (VedPatrika) */
-    .card-mini-media {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 16px;
-      padding: 10px 14px;
-      background: rgba(9, 9, 12, 0.7);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      position: relative;
-      z-index: 2;
-    }
-    .chart-thumb {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #141417;
-      padding: 3px;
-      flex-shrink: 0;
-    }
-    .mini-media-text { display: flex; flex-direction: column; gap: 2px; }
+    footer { margin: 80px 0 0; padding: 40px 0 60px; border-top: 1px solid var(--line); }
+    footer h2 { font: 400 30px/1.2 "Newsreader", Georgia, serif; margin-bottom: 8px; }
+    footer p { color: var(--muted); margin-bottom: 20px; }
+    .small { font-size: 13px; color: var(--faint); margin-top: 40px; }
 
-    .all-repos { margin-top: 36px; text-align: center; }
-    .all-repos a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
-    .all-repos a:hover { color: var(--accent); }
 
-    /* ---------- Services ---------- */
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
-    .service {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .service:hover {
-      border-color: rgba(52, 211, 153, 0.45);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(0,0,0,0.5);
-    }
-    .service-num {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .service h3 { font-size: 18px; font-weight: 700; margin-top: 18px; color: #fff; }
-    .service p { color: var(--muted); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
 
-    /* ---------- Process / Engineering Principles ---------- */
-    .process-strip {
-      margin-top: 50px;
-      padding: 32px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .process-item h4 { font-size: 16px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
-    .process-item p { color: var(--muted); font-size: 14px; margin-top: 8px; line-height: 1.6; }
+    /* Terminal */
+    .term { background: #0d1117; border-color: #1f2630; }
+    .term-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #161b22; border-bottom: 1px solid #1f2630; }
+    .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+    .term-bar i:nth-child(2) { background: #febc2e; } .term-bar i:nth-child(3) { background: #28c840; }
+    .term-bar span { margin-left: 8px; font: 12px "JetBrains Mono", monospace; color: #8b949e; }
+    .term-body { margin: 0; padding: 16px 18px; min-height: 250px; font: 13px/1.75 "JetBrains Mono", monospace; color: #c9d1d9; white-space: pre-wrap; word-break: break-word; }
+    .term-body .p { color: #7ee787; } .term-body .ok { color: #7ee787; } .term-body .warn { color: #e3b341; } .term-body .dim { color: #8b949e; }
+    .caret { display: inline-block; width: 8px; height: 15px; background: #c9d1d9; vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .term figcaption { color: #8b949e; border-color: #1f2630; background: #0d1117; }
 
-    /* ---------- Contact ---------- */
-    .contact { text-align: center; }
-    .contact .section-sub { margin-left: auto; margin-right: auto; }
-    .contact .cta-row { justify-content: center; margin-top: 36px; }
-
-    /* ---------- Footer ---------- */
-    footer { border-top: 1px solid var(--border); padding: 36px 0; }
-    .footer-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
-      color: var(--muted); font-size: 13.5px;
+    /* Diary touches */
+    .note {
+      display: block; width: fit-content; margin: -4px 0 12px; transform: rotate(-2deg);
+      font: 600 22px/1.15 "Caveat", cursive; color: var(--ink);
     }
-    .footer-inner .mono { font-size: 12.5px; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .grid, .services-grid, .process-strip, .card-featured-inner { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      section { padding: 75px 0; }
-      .hero { padding: 130px 0 60px; }
+    .note::before { content: "↳ "; }
+    @media (min-width: 1240px) {
+      .stop .note { position: absolute; right: -230px; top: 18px; width: 200px; margin: 0; transform: rotate(-4deg); }
+      .stop .note::before { content: "← "; }
+      .stop:nth-of-type(even) .note { transform: rotate(3deg); }
     }
-    
-    /* ---------- Reveal on scroll ---------- */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
+    figure.polaroid {
+      position: relative; background: #f5f2ea; border: 0; border-radius: 3px; padding: 10px 10px 0;
+      transform: rotate(-1.2deg); box-shadow: 0 14px 34px rgba(0,0,0,.45); overflow: visible; margin: 22px 6px 12px;
+    }
+    figure.polaroid.tilt-r { transform: rotate(1.2deg); }
+    figure.polaroid.narrow { max-width: 420px; margin-left: auto; margin-right: auto; }
+    figure.polaroid img { border-radius: 1px; }
+    figure.polaroid figcaption {
+      border: 0; background: none; color: #2b2a33; text-align: center; padding: 10px 8px 14px;
+      font: 700 22px/1.2 "Caveat", cursive;
+    }
+    figure.polaroid::before {
+      content: ""; position: absolute; top: -12px; left: 50%; width: 110px; height: 26px; transform: translateX(-50%) rotate(-3deg);
+      background: rgba(252, 211, 77, .55); box-shadow: 0 1px 3px rgba(0,0,0,.2); z-index: 1;
+    }
+    figure.polaroid:hover { transform: rotate(0deg) scale(1.01); }
+    header.intro { position: relative; }
+    figure.polaroid.me { width: 250px; transform: rotate(4deg); margin: 0; }
+    figure.polaroid.me figcaption { font-size: 20px; }
+    @media (min-width: 1160px) {
+      figure.polaroid.me { position: absolute; right: -300px; top: 70px; }
+    }
+    @media (max-width: 1159px) {
+      figure.polaroid.me { width: 190px; float: right; margin: 0 0 16px 18px; }
+      figure.polaroid.me figcaption { font-size: 17px; padding: 8px 6px 10px; }
+    }
+    @media (max-width: 600px) {
+      figure.polaroid.me { float: none; width: 200px; margin: 6px auto 28px; }
+    }
+    /* Effects */
+    h1 em { color: var(--accent); }
+    .facts div, .principles div, .builds li, figure, .btn { transition: transform .25s ease, box-shadow .25s ease, border-color .25s; }
+    .facts div:hover, .principles div:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent); }
+    .builds li:hover { background: color-mix(in srgb, var(--c, var(--accent)) 6%, var(--surface)); }
+    figure:hover { transform: translateY(-3px); box-shadow: 0 18px 44px rgba(0,0,0,.5); }
+    .btn:hover { transform: translateY(-2px); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
+      .stop.now .dot { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
-      .dot { animation: none; }
     }
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 6px;
+    @media (max-width: 600px) {
+      nav .links { gap: 14px; }
+      nav .links .hide-sm { display: none; }
+      header.intro { padding: 36px 0 24px; }
+      .lede { font-size: 16.5px; }
+      .facts { grid-template-columns: 1fr; }
+      .principles { grid-template-columns: 1fr; }
+      .journey { padding-left: 42px; }
+      .journey::before, .rail-fill { left: 14px; }
+      .dot { left: -42px; width: 32px; height: 32px; font-size: 15px; }
+
     }
   </style>
 </head>
 <body>
-
-  <!-- ===================== NAV ===================== -->
-  <nav>
-    <div class="container nav-inner">
-      <a href="#top" class="logo">
-        <span class="logo-mark">AA</span>
-        Aditya Arya
-      </a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#principles">How I Work</a>
+  <div class="wrap">
+    <nav>
+      <span class="mark">aditya arya</span>
+      <span class="links">
+        <a href="#journey">Journey</a>
+        <a href="#now" class="hide-sm">Now</a>
         <a href="#contact">Contact</a>
+      </span>
+    </nav>
+
+    <header class="intro">
+      <figure class="polaroid me">
+        <img src="assets/aditya.jpg" alt="Aditya at a restaurant table, looking at his phone and smiling" width="560" height="700" />
+        <figcaption>that's me 👋 checking on my agents</figcaption>
+      </figure>
+      <p class="eyebrow">Café owner · Trader · Self-taught builder</p>
+      <h1>From a café counter<br />to <em>AI agents</em>.</h1>
+      <p class="lede">
+        I didn't come to software through a CS degree. I came through <strong>customers</strong>, <strong>markets</strong>,
+        and a lot of curiosity. When AI made building possible for one person, I started shipping, and I haven't stopped.
+        This page is that journey, with proof at every stop.
+      </p>
+      <span class="status">Open to roles and projects in AI agents &amp; automation</span>
+      <div class="cta">
+        <a class="btn primary" href="mailto:adityaryawork@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/adityarya24" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
-    </div>
-  </nav>
 
-  <main id="top">
-
-    <!-- ===================== HERO ===================== -->
-    <header class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <span class="badge"><span class="dot"></span> Available for high-impact sprint projects</span>
-            <h1>Aditya Arya<span class="accent">.</span></h1>
-            <p class="hero-tagline">
-              AI Product &amp; Agent Architect. I build <strong>local-first multi-agent systems</strong>, production <strong>MCP servers</strong>, and <strong>24/7 autonomous pipelines</strong> that deliver real engineering leverage.
-            </p>
-            <div class="cta-row">
-              <a href="#work" class="btn btn-primary">Explore Featured Work</a>
-              <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-ghost">Schedule a Call ↗</a>
-            </div>
-            <div class="socials">
-              <a href="https://github.com/adityarya24" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
-              <a href="https://x.com/adityarya_ai" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Terminal Preview Widget -->
-          <div class="terminal-card">
-            <div class="terminal-header">
-              <span class="term-dot term-red"></span>
-              <span class="term-dot term-yellow"></span>
-              <span class="term-dot term-green"></span>
-              <span class="term-title">mindsync-orchestration ~ bash</span>
-            </div>
-            <div class="terminal-body">
-              <div><span class="term-prompt">$</span><span class="term-cmd">mindsync-dispatch run auto "refactor auth schema" \</span></div>
-              <div style="padding-left: 14px;"><span class="term-cmd">--capability coding --worktree --on-limit handoff</span></div>
-              <div class="term-dim" style="margin-top: 8px;">[1] Analyzing task capability requirements...</div>
-              <div><span class="term-success">⚡ Capability Router:</span> <span class="term-info">Selected Claude Code (Deep Architecture)</span></div>
-              <div><span class="term-purple">🛡️ Conflict Shield:</span> <span>Paths claimed across 3 active workers</span></div>
-              <div><span class="term-purple">🧠 Vector Memory:</span> <span>Found 2 relevant architectural decisions</span></div>
-              <div class="term-dim" style="margin-top: 4px;">--- Executing task in isolated git worktree ---</div>
-              <div><span class="term-success">✅ Task Completed:</span> <span class="term-info">0 collisions · Clean PR generated</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metrics Strip -->
-        <div class="metrics-bar">
-          <div class="metric-item">
-            <span class="metric-num">★ 16</span>
-            <span class="metric-label">Stars on Agent Notch Desktop HUD</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-num">15+</span>
-            <span class="metric-label">Production MCP tools shipped &amp; active</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-num">4 Live</span>
-            <span class="metric-label">Astrology products running in production</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-num">100%</span>
-            <span class="metric-label">Local-first &amp; deterministic systems</span>
-          </div>
-        </div>
+      <div class="facts">
+        <div><strong>4 years</strong><span>running a café, 100+ customers a day</span></div>
+        <div><strong>1 live product</strong><span>VedPatrika: payments, WhatsApp, PDFs</span></div>
+        <div><strong>24/7</strong><span>AI agents on my own server</span></div>
       </div>
     </header>
 
-    <!-- ===================== PROJECTS ===================== -->
-    <section id="work">
-      <div class="container">
-        <p class="kicker">Selected Work</p>
-        <h2>Things I've built &amp; shipped.</h2>
-        <p class="section-sub">Ambient developer HUDs, production astrology engines, and multi-agent MCP infrastructure — designed, built, and shipped for real workloads.</p>
+    <h2 class="section" id="journey">The journey</h2>
+    <p class="section-note">Every stop taught me something the next one needed.</p>
 
-        <div class="grid">
-          <!-- Featured Hero Card: Agent Notch -->
-          <article class="card card-wide">
-            <div class="card-featured-inner">
-              <div class="card-featured-content">
-                <div class="card-top">
-                  <h3>⚡ Agent Notch</h3>
-                  <div style="display: flex; gap: 6px; align-items: center;">
-                    <span class="pill pill-star">★ 16 Stars</span>
-                    <span class="pill pill-accent">Desktop HUD</span>
-                  </div>
-                </div>
-                <p>Ambient right-edge desktop HUD for Windows that monitors live token quotas, session rate-limits, and weekly usage windows across Claude Code, Codex, Gemini CLI, Grok, and Cursor. Built with 100% click-through transparency and zero telemetry.</p>
-                <div class="tags">
-                  <span class="tag">Electron</span><span class="tag">React 19</span><span class="tag">Tailwind CSS v4</span><span class="tag">MindSync Handoff</span><span class="tag">Windows 10/11</span>
-                </div>
-                <div class="card-links">
-                  <a href="https://github.com/adityarya24/agent-notch" target="_blank" rel="noopener">GitHub (★ 16) ↗</a>
-                  <a href="https://github.com/adityarya24/agent-notch#readme" target="_blank" rel="noopener">Documentation ↗</a>
-                </div>
-              </div>
-              <div class="card-featured-media">
-                <div class="media-frame">
-                  <img src="assets/agent-notch-handoff.webp" alt="Agent Notch HUD showing live code-agent quota handoff to another agent" loading="lazy" />
-                  <div class="media-caption">Live Quota Rings &amp; MindSync Handoff Flash</div>
-                </div>
-              </div>
-            </div>
-          </article>
+    <div class="journey">
+      <div class="rail-fill" aria-hidden="true"></div>
+      <section class="stop" style="--c:#a78bfa">
+        <span class="dot" aria-hidden="true">💡</span>
+        <p class="when">Always</p>
+        <h3>The tech enthusiast who never shipped</h3>
+        <span class="note" aria-hidden="true">used everything, built nothing (yet)</span>
+        <p>I've always been the person who tries new tech first. But for years that meant using software, not making it. Building felt like something other people did.</p>
+      </section>
 
-          <!-- Project 2: VedPatrika -->
-          <article class="card">
-            <div class="card-top">
-              <h3>VedPatrika</h3>
-              <span class="pill pill-accent">Live D2C Product</span>
-            </div>
-            <p>Full-stack Vedic astrology platform running live at vedpatrika.in — powered by my own deterministic astro-skill engine. Generates personalized bilingual life readings, dasha timelines, and chart-driven insights with zero external astrology API dependencies.</p>
-            
-            <div class="card-mini-media">
-              <img src="assets/sample-lagna-chart.png" alt="Astronomical Vedic Chart" class="chart-thumb" loading="lazy" />
-              <div class="mini-media-text">
-                <div class="mono" style="font-size: 11px; color: var(--accent); font-weight: 600;">Deterministic Swiss Ephemeris Engine</div>
-                <div style="font-size: 11.5px; color: var(--muted);">Full bilingual narrative &amp; high-precision Kundali charts</div>
-              </div>
-            </div>
+      <section class="stop" style="--c:#d4a373">
+        <span class="dot" aria-hidden="true">☕</span>
+        <p class="when">2018 – 2022 · Gwalior</p>
+        <h3>Kitty Café</h3>
+        <span class="note" aria-hidden="true">where I learned to really listen</span>
+        <p>I founded and ran <strong>Kitty Café</strong> in Gwalior. Within a year it was among the <strong>top 10 cafés in the city</strong>, serving <strong>100+ customers a day</strong> with a team of eight. I handled complaints at the counter, vendors, inventory and the P&amp;L myself.</p>
+        <p>COVID closed it. Hard lesson, and it pushed me to look at what else I could build.</p>
+        <div class="lesson"><b>What it taught me</b>Listen to the customer, then fix the real problem, not just the question they asked.</div>
+      </section>
 
-            <div class="tags">
-              <span class="tag">Production</span><span class="tag">astro-skill Engine</span><span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">PDF Pipeline</span>
-            </div>
-            <div class="card-links">
-              <a href="https://vedpatrika.in" target="_blank" rel="noopener">Visit Site ↗</a>
-              <a href="https://github.com/adityarya24/astro-skill" target="_blank" rel="noopener">Engine (Open Source) ↗</a>
-            </div>
-          </article>
-
-          <!-- Project 3: MindSync AI -->
-          <article class="card">
-            <div class="card-top">
-              <h3>MindSync AI</h3>
-              <span class="pill pill-accent">PyPI Package</span>
-            </div>
-            <p>Local-first Model Context Protocol (MCP) orchestrator for coding agents (Codex, Claude, Gemini, Antigravity, Grok, Cursor, OpenCode, Aider). Capability-based routing, vector memory via <code>sqlite-vec</code>, path locking, and cross-provider quota handoff.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP Protocol 1.27+</span><span class="tag">Multi-Agent</span><span class="tag">sqlite-vec</span><span class="tag">Local-First</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 10px; margin-top: 16px; flex-wrap: wrap;">
-              <a href="https://pypi.org/project/mindsync-ai/" target="_blank" rel="noopener" style="display:inline-flex;">
-                <img src="https://img.shields.io/badge/PyPI%20Downloads-5.5k-brightgreen?style=flat" alt="5.5k+ PyPI downloads (verified 2026-09-05)" loading="lazy" />
-              </a>
-              <a href="https://img.shields.io/pypi/v/mindsync-ai" target="_blank" rel="noopener" style="display:inline-flex;">
-                <img src="https://img.shields.io/pypi/v/mindsync-ai?style=flat&amp;label=version&amp;color=blue" alt="PyPI version" loading="lazy" />
-              </a>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/mindsync-ai" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://pypi.org/project/mindsync-ai/" target="_blank" rel="noopener">PyPI (Live) ↗</a>
-            </div>
-          </article>
-
-          <!-- Project 4: Smart File Organizer -->
-          <article class="card">
-            <div class="card-top">
-              <h3>Smart File Organizer</h3>
-              <span class="pill pill-accent">Open Source</span>
-            </div>
-            <p>Zero-dependency, background-capable file organizer and daemon for Downloads and Desktop. Features active download locking, collision-safe renaming, transaction rollback (<code>--undo</code>), and Windows Startup service integration.</p>
-            <div class="tags">
-              <span class="tag">Python 3.8+</span><span class="tag">Background Daemon</span><span class="tag">Desktop Automation</span><span class="tag">Zero Dependencies</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/file-organizer" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </article>
-
-          <!-- Project 5: astro-skill -->
-          <article class="card">
-            <div class="card-top">
-              <h3>astro-skill</h3>
-              <span class="pill pill-muted">Agent Skill + MCP</span>
-            </div>
-            <p>Open-source deterministic Vedic astrology engine and MCP server — high-precision Swiss Ephemeris astronomical calculations for kundali, dasha timelines, panchang, and guna milan with zero external API keys.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Swiss Ephemeris</span><span class="tag">Astronomical Algorithms</span><span class="tag">PDF Engine</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/astro-skill" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </article>
-
-          <!-- Project 6: GWS Marketing -->
-          <article class="card">
-            <div class="card-top">
-              <h3>GWS Marketing MCP</h3>
-              <span class="pill pill-accent">15 MCP Tools</span>
-            </div>
-            <p>Agent-facing enterprise MCP server for Google marketing data — Search Console, GA4, Gmail, Calendar, and Drive queried directly by coding agents with human-in-the-loop email draft safeguards.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP Server</span><span class="tag">Scoped OAuth</span><span class="tag">GA4 / GSC Analytics</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/gws-marketing" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </article>
-
-          <!-- Project 7: Trading MCP Server -->
-          <article class="card">
-            <div class="card-top">
-              <h3>Trading MCP Server</h3>
-              <span class="pill pill-muted">Fintech &amp; Markets</span>
-            </div>
-            <p>Financial market MCP server tailored for Indian equities (NSE/BSE) — delivers automated morning market briefs, end-of-day sector scans, and structured trade journaling directly into AI agent context.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Market Analytics</span><span class="tag">NSE / BSE Data</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/adityarya24/trading-mcp-server" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-          </article>
+      <section class="stop" style="--c:#fbbf24">
+        <span class="dot" aria-hidden="true">📈</span>
+        <p class="when">2022 – present</p>
+        <h3>Markets</h3>
+        <span class="note" aria-hidden="true">red days taught me more than green ones</span>
+        <p>I started trading <strong>Indian equities</strong>, then moved into <strong>crypto</strong> and <strong>gold</strong>. Alongside, I took freelance technical support work: triaging API failures, server misconfigurations and webhook issues, and writing clear root-cause notes for clients.</p>
+        <figure class="polaroid tilt-r">
+          <img src="assets/trading-chart.jpg" alt="Gold (XAU/USD) 15-minute chart on TradingView with entry, stop-loss and two take-profit levels marked" width="1000" height="606" loading="lazy" />
+          <figcaption>gold on the 15-min chart, levels marked</figcaption>
+        </figure>
+        <div class="lesson"><b>What it taught me</b>Risk, discipline and journaling. Decisions from data, not from mood.</div>
+        <div class="proof">
+          <a href="https://github.com/adityarya24/trading-mcp-server" target="_blank" rel="noopener">trading-mcp-server ↗</a>
+          <span>built later: NSE/BSE briefs + trade journal</span>
         </div>
+      </section>
 
-        <div class="all-repos">
-          <a href="https://github.com/adityarya24?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub →</a>
-        </div>
-      </div>
-    </section>
+      <section class="stop" style="--c:#34d399">
+        <span class="dot" aria-hidden="true">✨</span>
+        <p class="when">2025</p>
+        <h3>AI walks in</h3>
+        <span class="note" aria-hidden="true">this is where it clicked</span>
+        <p>Last year AI changed how I work. With <strong>Claude</strong> and agent setups like <strong>OpenClaw</strong>, the gap between "I wish this existed" and working software got small enough for one person to cross in an evening.</p>
+        <p>So I stopped waiting to "learn to code first". I learned by shipping: small tools, then bigger ones, working through what the agents wrote and fixing what broke.</p>
+        <div class="lesson"><b>What changed</b>Curiosity finally had a way out. The limit became taste and persistence, not a degree.</div>
+      </section>
 
-    <!-- ===================== SERVICES ===================== -->
-    <section id="services">
-      <div class="container">
-        <p class="kicker">Services</p>
-        <h2>What I build for clients &amp; teams.</h2>
-        <p class="section-sub">
-          From architecture to production deployment — I build reliable, production-grade agentic systems for founders, engineering teams, and agencies. Most engagements are structured as 1-to-2 week focused sprints.
-        </p>
+      <section class="stop" style="--c:#60a5fa">
+        <span class="dot" aria-hidden="true">🛠️</span>
+        <p class="when">2026 · First builds</p>
+        <h3>Tools for agents, then an engine</h3>
+        <span class="note" aria-hidden="true">built what my own agents needed</span>
+        <p>My first public projects were the things my own agents needed:</p>
+        <ul class="builds">
+          <li><a href="https://github.com/adityarya24/AgentRelay" target="_blank" rel="noopener">AgentRelay</a> <span class="m">Apr</span><br />WebSocket relay so agents can talk to each other with rate limits and an identity registry.</li>
+          <li><a href="https://github.com/adityarya24/astro-skill" target="_blank" rel="noopener">astro-skill</a> <span class="m">Jul · open source</span><br />Vedic astrology engine on Swiss Ephemeris: kundali, dasha, panchang, guna milan, bilingual PDFs. No API keys.</li>
+          <li><a href="https://github.com/adityarya24/mindsync-ai" target="_blank" rel="noopener">MindSync AI</a> <span class="m">Jul · on PyPI</span><br />Local-first MCP orchestrator that routes work across Claude, Codex, Gemini and others, with shared memory and path locking.</li>
+        </ul>
+        <figure class="term">
+          <div class="term-bar"><i></i><i></i><i></i><span>mindsync ~ bash</span></div>
+          <pre class="term-body" aria-label="MindSync terminal session"><code data-lines='[
+["$ ","pip install mindsync-ai"],
+["","Successfully installed mindsync-ai"],
+["$ ","mindsync setup --mode auto"],
+["","✓ Registered MCP hosts: claude, codex, gemini"],
+["$ ","mindsync-dispatch run auto \"refactor database schema\" --write --worktree --on-limit handoff"],
+["","→ routed to codex (capability: coding)"],
+["","→ isolated git worktree created"],
+["","! codex hit its usage limit, handing off to claude with the latest checkpoint"],
+["","✓ done · review the branch, then merge"]
+]'></code><span class="caret"></span></pre>
+          <figcaption>Illustrative session. The commands are real, from the <a href="https://github.com/adityarya24/mindsync-ai#readme" target="_blank" rel="noopener">MindSync README</a>.</figcaption>
+        </figure>
+      </section>
 
-        <div class="services-grid">
-          <div class="service">
-            <span class="service-num">01</span>
-            <h3>Multi-Agent System Architecture</h3>
-            <p>Custom agent orchestrators that plan, use tools, manage memory, and complete complex workflows without recursive loops, hallucinations, or file collision hazards.</p>
-          </div>
-          <div class="service">
-            <span class="service-num">02</span>
-            <h3>Custom MCP Servers &amp; Tooling</h3>
-            <p>Expose your proprietary data, internal APIs, or SaaS backends directly to Claude, ChatGPT, Gemini, and Cursor over secure, production-hardened Model Context Protocol servers.</p>
-          </div>
-          <div class="service">
-            <span class="service-num">03</span>
-            <h3>Autonomous 24/7 Pipelines</h3>
-            <p>End-to-end automation pipelines — Telegram/Slack control planes, headless browser automation, real-time data ingestion, and resilient background daemons.</p>
-          </div>
-          <div class="service">
-            <span class="service-num">04</span>
-            <h3>Vedic Astrology Engine Licensing</h3>
-            <p>Deploy a client-ready Janma Patrika microservice into your platform — bilingual house narratives, dasha timelines, strength scores, and PDF reports powered by the VedPatrika engine.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section class="stop" style="--c:#f87171">
+        <span class="dot" aria-hidden="true">🪔</span>
+        <p class="when">2026 · August</p>
+        <h3>VedPatrika goes live</h3>
+        <span class="note" aria-hidden="true">first thing people can actually buy!</span>
+        <p>The astro engine became a real product at <a href="https://vedpatrika.in" target="_blank" rel="noopener">vedpatrika.in</a>: a bilingual Janma Patrika anyone can order. I built and run all of it: the Next.js site, the Python API, <strong>Cashfree</strong> payments, delivery over the <strong>WhatsApp Cloud API</strong> with approved templates, email, free calculators and SEO.</p>
+        <figure class="polaroid">
+          <img src="assets/vedpatrika-home.jpg" alt="VedPatrika homepage: 'Your birth chart — not just a chart, a clear reading of your life', with a green Janma Patrika book" width="1280" height="800" loading="lazy" />
+          <figcaption>vedpatrika.in: Hindi first, English on a tap</figcaption>
+        </figure>
+        <div class="lesson"><b>What it taught me</b>Shipping is the easy half. Payments, deliverability, support and Google are where products live or die.</div>
+      </section>
 
-    <!-- ===================== HOW I WORK ===================== -->
-    <section id="principles">
-      <div class="container">
-        <p class="kicker">How I Work</p>
-        <h2>Engineering principles.</h2>
-        <p class="section-sub">Zero fluff, practical execution, and systems designed to run reliably in production.</p>
+      <section class="stop" style="--c:#22d3ee">
+        <span class="dot" aria-hidden="true">🤖</span>
+        <p class="when">2026 · Aug – Sep</p>
+        <h3>A fleet that works while I sleep</h3>
+        <span class="note" aria-hidden="true">they work while I sleep 😴</span>
+        <p>I run a small team of AI agents on my own Linux server, controlled from Telegram: an assistant that ships code and runs ops, a content pipeline, scheduled research and reports, with shared long-term memory in Postgres.</p>
+        <ul class="builds">
+          <li><a href="https://github.com/adityarya24/agent-notch" target="_blank" rel="noopener">Agent Notch</a> <img src="https://img.shields.io/github/stars/adityarya24/agent-notch?style=flat&amp;label=stars&amp;color=047857" alt="GitHub stars" style="display:inline;vertical-align:middle;height:18px;margin-left:6px" loading="lazy" /><br />A Windows desktop HUD for live AI coding-agent quotas.</li>
+          <li><a href="https://github.com/adityarya24/gws-marketing" target="_blank" rel="noopener">GWS Marketing MCP</a><br />Search Console, GA4 and Workspace for agents, with scoped OAuth. It now sends me a weekly SEO report on its own.</li>
+          <li><a href="https://github.com/adityarya24/file-organizer" target="_blank" rel="noopener">Smart File Organizer</a><br />Zero-dependency Downloads/Desktop organizer with undo.</li>
+        </ul>
+        <figure class="polaroid tilt-r narrow">
+          <img src="assets/agent-notch-demo.webp" alt="Agent Notch on a Windows desktop: a slim pill of quota rings, glass hover cards with session and weekly usage, a refresh-quotas button and the settings panel" width="560" height="664" loading="lazy" />
+          <figcaption>Agent Notch: every agent's quota at a glance</figcaption>
+        </figure>
+      </section>
 
-        <div class="process-strip">
-          <div class="process-item">
-            <h4>⚡ Rapid 1–2 Week Sprints</h4>
-            <p>Clear deliverables, defined scopes, and fast turnaround. You get working production software in days, not speculative multi-month roadmaps.</p>
-          </div>
-          <div class="process-item">
-            <h4>🔒 Local-First &amp; Safe</h4>
-            <p>Architectures prioritize data privacy, local execution, explicit tool permissions, and zero lock-in to proprietary cloud agent platforms.</p>
-          </div>
-          <div class="process-item">
-            <h4>🛠️ Full-Stack Ownership</h4>
-            <p>From mathematical algorithms and backend daemons to database schemas and polished user interfaces — I handle the entire engineering cycle.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <p class="kicker">Contact</p>
-        <h2>Got a workflow worth automating?</h2>
-        <p class="section-sub">
-          Whether you need a custom agent system, an enterprise MCP server, or an end-to-end autonomous pipeline — let's discuss your project.
-        </p>
-        <div class="cta-row">
-          <a href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener" class="btn btn-primary">Book a 1:1 Intro Call ↗</a>
-          <a href="mailto:adityaryawork@gmail.com" class="btn btn-ghost">adityaryawork@gmail.com</a>
-          <a href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Aditya Arya. All rights reserved.</span>
-      <span class="mono">Engineered with plain HTML, CSS &amp; vanilla JS <span class="accent">— zero bloat</span></span>
+      <section class="stop now" id="now" style="--c:#f472b6">
+        <span class="dot" aria-hidden="true">🚀</span>
+        <p class="when">Now</p>
+        <h3>What I'm building</h3>
+        <span class="note" aria-hidden="true">still shipping ↓</span>
+        <p><strong>Agent Notch</strong>: alerts the moment an agent is stuck waiting for approval, and one click to its terminal.<br />
+        <strong>MindSync</strong>: working on v2.<br />
+        <strong>VedPatrika</strong>: growing it, one honest improvement at a time.</p>
+      </section>
     </div>
-  </footer>
 
+    <h2 class="section">How I work</h2>
+    <p class="section-note">What the café, the markets and the code have in common.</p>
+    <div class="principles">
+      <div><h4>Customer first</h4><p>Years at a café counter. I find the real problem before I build.</p></div>
+      <div><h4>Plain language</h4><p>I explain technical things simply, in Hindi and English.</p></div>
+      <div><h4>Ship, then verify</h4><p>Small releases, checked in the real product before I call them done.</p></div>
+      <div><h4>Honest numbers</h4><p>No fake reviews, no inflated metrics. Proof over claims.</p></div>
+    </div>
+
+    <footer id="contact">
+      <h2>Let's talk</h2>
+      <p>Building with AI agents, or need automation that actually runs every day? I'd like to hear about it.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:adityaryawork@gmail.com">adityaryawork@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/adityaryawork" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://x.com/adityarya_ai" target="_blank" rel="noopener">X</a>
+        <a class="btn" href="https://cal.com/adityarya24/project-discussion" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      <p class="small">© 2026 Aditya Arya · Noida, India</p>
+    </footer>
+  </div>
   <script>
-    // Progressive enhancement: reveal cards/services on scroll
-    const revealTargets = document.querySelectorAll(".card, .service, .process-item, .metric-item, .terminal-card, .kicker, h2, .section-sub");
-    revealTargets.forEach((el) => el.classList.add("reveal"));
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+    // Reveal stops as they scroll in, fill the rail to match, and follow the mouse with a soft light.
+    (() => {
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const items = document.querySelectorAll(".stop, .principles > div, .journey figure");
+      if (!reduce && "IntersectionObserver" in window) {
+        items.forEach((el) => el.classList.add("reveal"));
+        const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        }), { rootMargin: "0px 0px -10% 0px" });
+        items.forEach((el) => io.observe(el));
+      }
+      const journey = document.querySelector(".journey");
+      const fill = document.querySelector(".rail-fill");
+      const full = () => journey.offsetHeight - 16;
+      const onScroll = () => {
+        const r = journey.getBoundingClientRect();
+        const done = Math.min(Math.max(innerHeight * 0.6 - r.top, 0), full());
+        fill.style.height = done + "px";
+        fill.style.setProperty("--rail-h", full() + "px");
+      };
+      addEventListener("scroll", onScroll, { passive: true });
+      addEventListener("resize", onScroll);
+      onScroll();
+      // Type the MindSync session line by line, then start over.
+      const code = document.querySelector(".term-body code");
+      if (code) {
+        const lines = JSON.parse(code.dataset.lines);
+        const cls = (t) => t.startsWith("✓") ? "ok" : t.startsWith("!") ? "warn" : t.startsWith("→") ? "dim" : "";
+        const render = (upto, partial) => {
+          code.innerHTML = "";
+          lines.slice(0, upto).concat(partial ? [partial] : []).forEach(([prompt, text], i, arr) => {
+            const row = document.createElement("div");
+            if (prompt) { const p = document.createElement("span"); p.className = "p"; p.textContent = prompt; row.append(p); }
+            const t = document.createElement("span"); t.className = prompt ? "" : cls(text); t.textContent = text; row.append(t);
+            code.append(row);
+          });
+        };
+        if (reduce) { render(lines.length); }
+        else {
+          const run = async () => {
+            const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+            for (;;) {
+              for (let i = 0; i < lines.length; i++) {
+                const [prompt, text] = lines[i];
+                if (prompt) { for (let k = 1; k <= text.length; k++) { render(i, [prompt, text.slice(0, k)]); await wait(28); } await wait(350); }
+                else { render(i + 1); await wait(520); }
+              }
+              await wait(3500);
+            }
+          };
+          new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); run(); } }).observe(code);
         }
       }
-    }, { threshold: 0.1 });
-    revealTargets.forEach((el) => observer.observe(el));
-
-    // Linear-style Spotlight Cursor Glow on cards & interactive containers
-    const spotlightCards = document.querySelectorAll(".card, .service, .process-item, .terminal-card");
-    spotlightCards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-        card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-      });
-    });
+    })();
   </script>
-
 </body>
 </html>
