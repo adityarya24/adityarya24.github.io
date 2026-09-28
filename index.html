@@ -197,6 +197,32 @@
     @media (max-width: 600px) {
       figure.polaroid.me { float: none; width: 200px; margin: 6px auto 28px; }
     }
+    /* Proof of work: numbers and heatmap pulled from GitHub every night */
+    .gh { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 20px; }
+    .gh-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+    .gh-nums strong { display: block; font: 400 30px/1.1 "Newsreader", Georgia, serif; color: var(--ink); }
+    .gh-nums span { display: block; font-size: 13px; line-height: 1.4; color: var(--muted); }
+    .heat { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 1fr); grid-auto-columns: 1fr; gap: 3px; }
+    .heat i { aspect-ratio: 1; border-radius: 2px; background: var(--chip); }
+    .heat i[data-l="1"] { background: rgba(252, 211, 77, .25); }
+    .heat i[data-l="2"] { background: rgba(252, 211, 77, .5); }
+    .heat i[data-l="3"] { background: rgba(252, 211, 77, .75); }
+    .heat i[data-l="4"] { background: var(--ink); }
+    .heat-foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; font: 500 11.5px "JetBrains Mono", monospace; color: var(--faint); }
+    .shipped { list-style: none; margin-top: 18px; border-top: 1px solid var(--line); }
+    .shipped li { display: flex; gap: 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; min-width: 0; }
+    .shipped li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .shipped .repo { font: 500 12px "JetBrains Mono", monospace; color: var(--ink); flex: none; }
+    .shipped a { color: var(--muted); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .shipped a:hover { color: var(--text); }
+    .shipped time { font: 500 11.5px "JetBrains Mono", monospace; color: var(--faint); flex: none; }
+    @media (max-width: 600px) {
+      .gh { padding: 16px; }
+      .gh-nums strong { font-size: 24px; }
+      .heat { gap: 2px; }
+      .shipped li { flex-wrap: wrap; gap: 2px 10px; }
+      .shipped a { flex-basis: 100%; order: 3; white-space: normal; }
+    }
     /* Effects */
     h1 em { color: var(--accent); }
     .facts div, .principles div, .builds li, figure, .btn { transition: transform .25s ease, box-shadow .25s ease, border-color .25s; }
@@ -231,6 +257,7 @@
       <span class="links">
         <a href="#journey">Journey</a>
         <a href="#now" class="hide-sm">Now</a>
+        <a href="#proof" class="hide-sm">Proof</a>
         <a href="#contact">Contact</a>
       </span>
     </nav>
@@ -380,6 +407,19 @@
       </section>
     </div>
 
+    <h2 class="section" id="proof">Proof of work</h2>
+    <p class="section-note">Straight from GitHub, refreshed every night. Most of the work lives in private repos, so it shows up here as squares, not names.</p>
+    <div class="gh">
+      <div class="gh-nums">
+        <div><strong data-gh="contributions">2,181</strong><span>contributions in the last year</span></div>
+        <div><strong data-gh="merged_prs">164</strong><span>merged pull requests</span></div>
+        <div><strong data-gh="public_repos">11</strong><span>public repos</span></div>
+      </div>
+      <div class="heat" aria-label="GitHub contributions over the last year"></div>
+      <div class="heat-foot"><span data-gh="range">last 12 months</span><a href="https://github.com/adityarya24" target="_blank" rel="noopener">github.com/adityarya24 →</a></div>
+      <ul class="shipped" aria-label="Recently shipped"></ul>
+    </div>
+
     <h2 class="section">How I work</h2>
     <p class="section-note">What the café, the markets and the code have in common.</p>
     <div class="principles">
@@ -405,7 +445,7 @@
     // Reveal stops as they scroll in, fill the rail to match, and follow the mouse with a soft light.
     (() => {
       const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const items = document.querySelectorAll(".stop, .principles > div, .journey figure");
+      const items = document.querySelectorAll(".stop, .principles > div, .journey figure, .gh");
       if (!reduce && "IntersectionObserver" in window) {
         items.forEach((el) => el.classList.add("reveal"));
         const io = new IntersectionObserver((entries) => entries.forEach((e) => {
@@ -455,6 +495,27 @@
           new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); run(); } }).observe(code);
         }
       }
+      // Proof of work: fill the numbers, heatmap and recent commits from assets/github.json.
+      fetch("assets/github.json").then((r) => r.json()).then((gh) => {
+        document.querySelectorAll("[data-gh]").forEach((el) => {
+          if (typeof gh[el.dataset.gh] === "number") el.textContent = gh[el.dataset.gh].toLocaleString("en-IN");
+        });
+        const fmt = (d, o) => new Date(d).toLocaleDateString("en-GB", o);
+        // Phones get the last six months so the squares stay readable.
+        const skip = innerWidth < 600 ? Math.max(gh.weeks.length - 26, 0) : 0;
+        const since = new Date(gh.first_day); since.setDate(since.getDate() + skip * 7);
+        document.querySelector('[data-gh="range"]').textContent = `since ${fmt(since, { month: "short", year: "numeric" })}`;
+        const heat = document.querySelector(".heat");
+        gh.weeks.slice(skip).forEach((week) => week.forEach((l) => { const c = document.createElement("i"); c.dataset.l = l; heat.append(c); }));
+        const list = document.querySelector(".shipped");
+        gh.recent.forEach((c) => {
+          const li = document.createElement("li");
+          const repo = document.createElement("span"); repo.className = "repo"; repo.textContent = c.repo;
+          const a = document.createElement("a"); a.href = c.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = c.message;
+          const t = document.createElement("time"); t.dateTime = c.date; t.textContent = fmt(c.date, { day: "numeric", month: "short" });
+          li.append(repo, a, t); list.append(li);
+        });
+      }).catch(() => document.querySelector(".heat").remove());
     })();
   </script>
 </body>
