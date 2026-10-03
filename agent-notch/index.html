@@ -114,6 +114,18 @@
     .plan.pro .btn { background: var(--amber); color: var(--ink); }
     .plan.pro .btn:hover { background: #ffb840; }
 
+    .plan .buynote { margin-top: 12px; font-size: 13px; color: var(--faint); text-align: center; }
+    .plan.pro .buynote { color: #a9a59b; }
+
+    .steps { list-style: none; counter-reset: step; display: grid; gap: 12px; margin: 0 0 24px; }
+    .steps li { counter-increment: step; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px 18px 60px; position: relative; color: var(--muted); font-size: 15px; }
+    .steps li::before { content: counter(step); position: absolute; left: 20px; top: 18px; font: 500 13px "JetBrains Mono", monospace; color: var(--amber-deep); border: 1px solid var(--line); border-radius: 999px; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+    .steps strong { color: var(--ink); font-weight: 600; }
+    .steps code, .after code { font: 13px "JetBrains Mono", monospace; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+    .after p { color: var(--muted); max-width: 64ch; }
+    .after p + p { margin-top: 12px; }
+    .after h3 { font-size: 16px; font-weight: 600; margin: 28px 0 6px; }
+
     .faq { display: grid; gap: 0; }
     .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
     .faq summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
@@ -165,7 +177,7 @@
           <a class="btn btn-dark" href="#install" data-umami-event="hero-install">Install free</a>
           <a class="btn btn-line" href="#pricing" data-umami-event="hero-pro">See Pro →</a>
         </div>
-        <p class="meta">Windows · open source (MIT) · no account · macOS in progress</p>
+        <p class="meta">Windows · open source (MIT) · no account · macOS in progress · <a href="changelog/">What's new</a></p>
       </div>
       <div class="video">
         <video src="launch.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Agent Notch launch video: quota rings for each coding agent on the edge of the screen"></video>
@@ -255,8 +267,28 @@
             <li>Auto-handoff to the next agent before the limit <span class="tag">soon</span></li>
           </ul>
           <a class="btn" href="https://checkout.dodopayments.com/buy/pdt_0NouPkIrR551phLvO46te?quantity=1" rel="noopener" data-umami-event="plan-pro-buy">Get Pro for $5</a>
+          <p class="buynote">License key and download arrive by email.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="after-buy" class="after">
+    <div class="wrap narrow">
+      <h2>After you <em>buy Pro</em></h2>
+      <p class="sub">Checkout is by Dodo Payments. Once you pay, Dodo emails you your license key and the Pro download, a zip file. If you don't see it within a few minutes, check spam or promotions.</p>
+      <p class="sub">You need Windows 10 or 11 and <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> 18 or newer.</p>
+      <ol class="steps">
+        <li><strong>Unzip the folder.</strong> Anywhere is fine. Downloads works.</li>
+        <li><strong>Double-click <code>install.bat</code>.</strong> It copies Pro to <code>%USERPROFILE%\tools\agent-notch-pro</code>, installs it, starts it and adds it to Windows startup. If the free Agent Notch is running, Pro replaces it.</li>
+        <li><strong>Enter your key.</strong> Right-click the Agent Notch tray icon, choose "Enter license key...", and paste the key from your purchase email.</li>
+      </ol>
+      <h3>Two computers, and offline</h3>
+      <p>One key works on two of your computers. Pro keeps working for 7 days offline. The license is checked once a day.</p>
+      <h3>Updates</h3>
+      <p>Download the latest zip from the same purchase email and run <code>install.bat</code> again.</p>
+      <h3>Help</h3>
+      <p>Write to <a href="mailto:adityaryawork@gmail.com">adityaryawork@gmail.com</a>. Refund questions are covered on the <a href="refund/">refund page</a>.</p>
     </div>
   </section>
 
@@ -281,6 +313,10 @@
           <p>No. You pay once and keep Pro, with updates. The first 100 buyers pay $5; after that it's $9. One license works on two of your computers.</p>
         </details>
         <details>
+          <summary>Where do I get Pro after buying?</summary>
+          <p>Dodo Payments emails you a license key and the Pro download (a zip) right after you pay. Check spam or promotions if it hasn't arrived in a few minutes. Unzip it, double-click <code>install.bat</code> (needs Windows 10/11 and Node.js 18 or newer), then right-click the tray icon, choose "Enter license key..." and paste your key. Steps are in <a href="#after-buy">After you buy Pro</a>. Stuck? Write to adityaryawork@gmail.com.</p>
+        </details>
+        <details>
           <summary>What happens to Pro if I'm offline?</summary>
           <p>Pro keeps working for 7 days without a connection. The license is checked once a day.</p>
         </details>
@@ -291,7 +327,7 @@
   <div class="wrap">
     <footer>
       <span>Built by <a href="https://adityarya.dev/">Aditya Arya</a>, who runs these agents every day.</span>
-      <span><a href="https://github.com/adityarya24/agent-notch" target="_blank" rel="noopener">GitHub</a> · <a href="https://x.com/adityarya_ai" target="_blank" rel="noopener">@adityarya_ai</a> · <a href="privacy/">Privacy</a> · <a href="terms/">Terms</a> · <a href="refund/">Refunds</a></span>
+      <span><a href="https://github.com/adityarya24/agent-notch" target="_blank" rel="noopener">GitHub</a> · <a href="https://x.com/adityarya_ai" target="_blank" rel="noopener">@adityarya_ai</a> · <a href="privacy/">Privacy</a> · <a href="terms/">Terms</a> · <a href="refund/">Refunds</a> · <a href="changelog/">Changelog</a></span>
     </footer>
   </div>
 

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f4f0" />
+  <title>Changelog · Agent Notch</title>
+  <meta name="description" content="What's new in Agent Notch: every release, newest first, with the changes you can see and use." />
+  <link rel="canonical" href="https://adityarya.dev/agent-notch/changelog/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='20' y='4' width='24' height='56' rx='12' fill='%2311110f'/><circle cx='32' cy='20' r='6' fill='none' stroke='%23f5a524' stroke-width='3'/><circle cx='32' cy='38' r='6' fill='none' stroke='%2334d399' stroke-width='3'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#f5f4f0; --ink:#14130f; --muted:#5f5d57; --faint:#8d8a82; --line:#e3e0d8; --amber-deep:#b86e00; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--ink); font:16px/1.7 "Inter", system-ui, -apple-system, sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:var(--amber-deep); text-decoration:none; }
+    a:hover { text-decoration:underline; text-underline-offset:3px; }
+    .wrap { max-width:720px; margin:0 auto; padding:0 16px; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:14px; }
+    nav .mark { font-weight:600; color:var(--ink); }
+    nav .links { display:flex; gap:16px; }
+    nav .links a { color:var(--muted); }
+    h1 { font:400 clamp(36px,6vw,52px)/1.08 "Newsreader", Georgia, serif; letter-spacing:-.015em; margin:32px 0 8px; }
+    .updated { color:var(--faint); font-size:14px; margin-bottom:32px; }
+    h2 { font:500 19px/1.4 "Inter", sans-serif; margin:32px 0 8px; }
+    p, li { color:var(--muted); }
+    p + p { margin-top:12px; }
+    ul { padding-left:20px; margin-top:8px; }
+    li + li { margin-top:6px; }
+    strong { color:var(--ink); font-weight:600; }
+    footer { margin-top:56px; padding:32px 0 48px; border-top:1px solid var(--line); font-size:14px; color:var(--faint); display:flex; flex-wrap:wrap; gap:8px 16px; }
+    footer a { color:var(--muted); }
+      h3 { font:600 13px/1.4 "Inter", sans-serif; text-transform:uppercase; letter-spacing:.08em; color:var(--faint); margin:20px 0 4px; }
+    h2 + .updated { margin-bottom:0; }
+    code { font:13px "JetBrains Mono", monospace; background:var(--paper,#fbfaf7); border:1px solid var(--line); border-radius:6px; padding:1px 5px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="mark" href="../">Agent Notch</a>
+      <span class="links"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../refund/">Refunds</a></span>
+    </nav>
+    <main>
+      <h1>Changelog</h1>
+      <p class="updated">Latest: 1.4.2, 27 September 2026</p>
+      <p>What changed in each release, newest first. Back to <a href="../">Agent Notch</a>.</p>
+
+      <h2>1.4.2</h2>
+      <p class="updated">27 September 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>A refresh button next to Settings at the foot of the rail. It re-reads every provider on demand, the same as "Refresh Quotas Now" in the tray. During a rate-limit cooldown it shows the last known reading instead of forcing another request.</li>
+      </ul>
+      <h2>1.4.1</h2>
+      <p class="updated">18 September 2026</p>
+      <h3>Changed</h3>
+      <ul>
+        <li>Suggestions for new tools now spell out the opt-in. One click gives you the icon and glow. Usage % stays a dash until a JSON quota command exists.</li>
+      </ul>
+      <h2>1.4.0</h2>
+      <p class="updated">18 September 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>Discovery now also recognizes Cline, Continue, Roo Code, Factory Droid, Hermes, Windsurf, Trae, Zed and Kiro. Settings and <code>notch provider discover</code> suggest them. Nothing is added to the notch until you opt in, and usage numbers stay unknown unless you attach a JSON command or a manual snapshot.</li>
+        <li><code>notch quota</code> (also <code>notch --json</code>) prints the last quota reading as JSON. It reads the cache only. Tokens and raw provider data are never printed.</li>
+      </ul>
+      <h3>Changed</h3>
+      <ul>
+        <li>Smoother motion: collapse and reveal is one spring, rings fade with the slide, quota numbers tick with the arc, and a handoff draws a spark down the rail. Reduce motion turns the new animations off.</li>
+        <li>The open rail is a slimmer half-pill. Settings no longer has a divider.</li>
+      </ul>
+      <h2>1.3.8</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>Agent Notch is on npm. Install with <code>npm i -g agent-notch</code>, or run it once with <code>npx agent-notch</code>.</li>
+      </ul>
+      <h3>Changed</h3>
+      <ul>
+        <li>The handoff notice is now a toast instead of a line inside the rail, so the rail no longer grows and shrinks. It uses the destination agent's quota color.</li>
+        <li>Animations share one set of timings, so a ring's fill, color and glow settle together. Reduce motion turns them all off.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Choosing the Antigravity icon for a custom agent no longer saves the spark icon instead.</li>
+        <li>The quota toast sits right beside the tucked rail instead of far from it.</li>
+        <li>Opening and closing Settings no longer shifts the notch.</li>
+        <li>The live-agent glow is no longer cut off flat at the edges, and the top and bottom rings no longer bleed into the rail border.</li>
+        <li>The quota toast, settings panel and hover card now animate in.</li>
+        <li>The collapse chevron gutter is narrower.</li>
+      </ul>
+      <h2>1.3.7</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The hover card is no longer clipped at the edge of the window.</li>
+      </ul>
+      <h2>1.3.6</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The working-agent glow no longer washes over the collapse chevron.</li>
+      </ul>
+      <h2>1.3.5</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The working-agent pulse is visible again, and the icon itself glows with it.</li>
+      </ul>
+      <h2>1.3.4</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The working-agent pulse no longer lights up neighboring icons or washes out its own percentage label.</li>
+      </ul>
+      <h2>1.3.3</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The Grok card now uses Grok's own mark instead of the X logo.</li>
+      </ul>
+      <h2>1.3.2</h2>
+      <p class="updated">2 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The Claude card no longer goes grey with "refresh failed" during normal use. When Anthropic rate-limits the request, Notch now keeps showing the last good reading for up to 15 minutes instead of blanking.</li>
+        <li>The Antigravity card now uses the Antigravity mark instead of the Gemini spark.</li>
+      </ul>
+      <h2>1.3.1</h2>
+      <p class="updated">1 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The collapse chevron has its own space and no longer overlaps provider icons.</li>
+      </ul>
+      <h2>1.3.0</h2>
+      <p class="updated">1 September 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>Add your own tools with <code>notch provider add</code>, plus <code>list</code>, <code>remove</code> and detection-only <code>discover</code> commands.</li>
+        <li>Discovery for Aider, GitHub Copilot, Amp, Goose, Crush, Qwen and ZCode, in Settings and the CLI.</li>
+      </ul>
+      <h3>Changed</h3>
+      <ul>
+        <li>The tucked rail is a quota-colored jewel instead of a plain chevron.</li>
+        <li>When the notch is visible, quota alerts show as a toast inside the rail. Windows toasts are used only when the window is hidden.</li>
+        <li>Codex uses the official OpenAI logomark.</li>
+        <li>Hover cards wait a beat before swapping, dragging lifts the ring, and the rail no longer shifts on hover.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>The tucked jewel follows each ring's own alert threshold instead of assuming 80%.</li>
+      </ul>
+      <h2>1.2.1</h2>
+      <p class="updated">1 September 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Open but idle Claude, Gemini, Grok, Cursor and OpenCode sessions no longer keep the activity ring glowing.</li>
+      </ul>
+      <h2>1.2.0</h2>
+      <p class="updated">1 September 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>A desktop notification when a quota crosses your alert threshold while the notch is tucked or hidden. Click it to reveal the notch. Turn it off with <strong>Notify when tucked</strong> in Settings.</li>
+        <li>The activity glow works for every supported CLI at once, including custom ones.</li>
+      </ul>
+      <h3>Changed</h3>
+      <ul>
+        <li>The last good quota reading now survives restarts for up to 24 hours and is marked stale until refreshed.</li>
+        <li>Custom tools keep activity detection separate from an optional JSON quota command.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Grok now tells a signed-in session with no quota apart from an expired sign-in.</li>
+        <li>Codex personal 5-hour and weekly windows, and Team weekly-only plans, are labeled correctly.</li>
+      </ul>
+      <h3>Privacy</h3>
+      <ul>
+        <li>Saved quota readings keep display fields only. Activity detection reads process and session metadata, never prompts or transcripts.</li>
+      </ul>
+      <h2>1.1.0</h2>
+      <p class="updated">31 August 2026</p>
+      <h3>Added</h3>
+      <ul>
+        <li>Drag to reorder rings. The first four stay in view and extra rings scroll underneath.</li>
+        <li>Healthy (green) percentages use the same color as the ring.</li>
+      </ul>
+      <h3>Changed</h3>
+      <ul>
+        <li>The collapse control is a chevron in the rail: right to tuck, left to pull back out.</li>
+        <li>The activity glow uses the working ring's own color and stays inside the pill. The green pip is gone.</li>
+        <li>Content in the overlay is vertically centered.</li>
+      </ul>
+      <h2>1.0.1</h2>
+      <p class="updated">31 August 2026</p>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Settings and runtime files moved out of the install folder, with your old config carried over.</li>
+        <li><code>notch status</code>, stop and restart work reliably, including after upgrades.</li>
+        <li>Disabled providers are no longer queried.</li>
+        <li>Expired Claude sign-ins are left alone. Notch asks Claude Code to refresh them.</li>
+        <li>Stale quota values are clearly marked and expire after five minutes.</li>
+        <li>Your alert threshold and each provider's quota-window labels are now applied.</li>
+      </ul>
+      <h3>Added</h3>
+      <ul>
+        <li>A slim curved grip that tucks the notch to the screen edge.</li>
+      </ul>
+      <h3>Security</h3>
+      <ul>
+        <li>Moved to Electron 44 with a sandboxed window, blocked navigation and permissions, and a strict content security policy.</li>
+        <li>No more Google Fonts requests at runtime.</li>
+        <li>Custom quota commands now come with a warning, since they run on your machine.</li>
+      </ul>
+    </main>
+    <footer>
+      <a href="../">Agent Notch</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="../refund/">Refunds</a>
+      <a href="../changelog/">Changelog</a>
+      <a href="mailto:adityaryawork@gmail.com">adityaryawork@gmail.com</a>
+    </footer>
+  </div>
+</body>
+</html>
