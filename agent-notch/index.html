@@ -47,7 +47,8 @@
     a { color: var(--amber-deep); text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
     .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-    .narrow { max-width: 760px; }
+    /* Narrow sections share the page's left edge; only their content is narrower. */
+    .narrow > * { max-width: 720px; }
 
     nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 14px; }
     nav .mark { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); }
