@@ -90,6 +90,9 @@
     .card h3 { font-size: 16px; font-weight: 600; margin: 14px 0 6px; }
     .card p { color: var(--muted); font-size: 15px; }
     .ring { width: 34px; height: 34px; }
+    .clip { border-radius: 12px; overflow: hidden; background: #111113; aspect-ratio: 5/3; margin-bottom: 4px; }
+    .clip video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .card .tag { border-color: var(--line); color: var(--muted); }
 
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
@@ -223,6 +226,30 @@
 
   <section>
     <div class="wrap">
+      <h2>See it <em>work</em></h2>
+      <p class="sub">Five-second loops of the real notch.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="clip"><video src="media/01-warning.mp4" poster="media/01-warning-poster.png" autoplay muted loop playsinline preload="metadata" aria-label="A Codex ring turns from green to red and a quota warning appears"></video></div>
+          <h3>Warned before the wall</h3>
+          <p>The ring goes amber, then red, and a notification tells you which agent is close.</p>
+        </div>
+        <div class="card">
+          <div class="clip"><video src="media/02-waiting-on-you.mp4" poster="media/02-waiting-on-you-poster.png" autoplay muted loop playsinline preload="metadata" aria-label="The Codex ring turns amber and a Waiting on you alert appears"></video></div>
+          <h3>Waiting on you <span class="tag">Pro</span></h3>
+          <p>When an agent stops to ask you something, its ring lights up and you get an alert.</p>
+        </div>
+        <div class="card">
+          <div class="clip"><video src="media/03-click-to-terminal.mp4" poster="media/03-click-to-terminal-poster.png" autoplay muted loop playsinline preload="metadata" aria-label="Hovering a ring shows reset times; clicking it brings the Codex terminal forward"></video></div>
+          <h3>One click, back to work <span class="tag">Pro</span></h3>
+          <p>Hover a ring for reset times. Click it and that agent&rsquo;s terminal comes to the front.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
       <h2>Works with the agents <em>you already use</em></h2>
       <p class="sub">Live quota where there's a real source for it. Other CLIs get an icon and the activity glow, never a made-up number.</p>
       <div class="chips">
@@ -342,8 +369,7 @@
       });
     });
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var v = document.querySelector('video');
-      if (v) { v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', ''); }
+      document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', ''); });
     }
   </script>
 </body>
