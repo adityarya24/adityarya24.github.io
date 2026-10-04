@@ -120,6 +120,7 @@
 
     .plan .buynote { margin-top: 12px; font-size: 13px; color: var(--faint); text-align: center; }
     .plan.pro .buynote { color: #a9a59b; }
+    .plan.pro .buynote a { color: #d6d2c8; text-decoration: underline; text-underline-offset: 2px; }
 
     .steps { list-style: none; counter-reset: step; display: grid; gap: 12px; margin: 0 0 24px; }
     .steps li { counter-increment: step; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px 18px 60px; position: relative; color: var(--muted); font-size: 15px; }
@@ -127,6 +128,7 @@
     .steps strong { color: var(--ink); font-weight: 600; }
     .steps code, .after code { font: 13px "JetBrains Mono", monospace; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
     .after p { color: var(--muted); max-width: 64ch; }
+    .after code.hash { font-size: 11px; word-break: break-all; }
     .after p + p { margin-top: 12px; }
     .after h3 { font-size: 16px; font-weight: 600; margin: 28px 0 6px; }
 
@@ -296,7 +298,7 @@
             <li>One key, two computers, all future updates</li>
           </ul>
           <a class="btn" href="https://checkout.dodopayments.com/buy/pdt_0NouPkIrR551phLvO46te?quantity=1" rel="noopener" data-umami-event="plan-pro-buy">Get Pro for $5</a>
-          <p class="buynote">License key by email. Download from your Dodo customer portal.</p>
+          <p class="buynote">License key by email. Windows installer in your Dodo customer portal.<br><a href="https://www.virustotal.com/gui/file/6d39a1f63e999a8132e0db9251a0010b1804101bcec8b76f39e98112f9401052" target="_blank" rel="noopener">VirusTotal: 0/65 clean</a> · <a href="#after-buy">install steps</a></p>
         </div>
       </div>
     </div>
@@ -305,19 +307,20 @@
   <section id="after-buy" class="after">
     <div class="wrap narrow">
       <h2>After you <em>buy Pro</em></h2>
-      <p class="sub">Checkout is by Dodo Payments. Once you pay, Dodo emails you your license key. The Pro download, a zip file, is in your Dodo customer portal: sign in there with the email you paid with. If the email isn't there within a few minutes, check spam or promotions.</p>
-      <p class="sub">You need Windows 10 or 11 and <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> 18 or newer.</p>
+      <p class="sub">Checkout is by Dodo Payments. Once you pay, Dodo emails you your license key. The Pro installer is in your Dodo customer portal: sign in there with the email you paid with. If the email isn't there within a few minutes, check spam or promotions.</p>
+      <p class="sub">Works on Windows 10 and 11. Nothing else to install, no admin rights needed.</p>
       <ol class="steps">
-        <li><strong>Download the zip.</strong> Open your Dodo customer portal with the email you paid with and download the Pro zip from your order.</li>
-        <li><strong>Unzip the folder.</strong> Anywhere is fine. Downloads works.</li>
-        <li><strong>Double-click <code>install.bat</code>.</strong> It copies Pro to <code>%USERPROFILE%\tools\agent-notch-pro</code>, installs it, starts it and adds it to Windows startup. If the free Agent Notch is running, Pro replaces it.</li>
+        <li><strong>Download the installer.</strong> Open your Dodo customer portal with the email you paid with and download <code>AgentNotchPro-Setup-1.5.0.exe</code> from your order.</li>
+        <li><strong>Run it.</strong> Windows may say "Windows protected your PC", because the app isn't code-signed yet. Click <em>More info</em>, then <em>Run anyway</em>. The installer is <a href="https://www.virustotal.com/gui/file/6d39a1f63e999a8132e0db9251a0010b1804101bcec8b76f39e98112f9401052" target="_blank" rel="noopener">scanned on VirusTotal</a> (0 of 65 engines flag it, including Microsoft Defender), and you can check the file yourself: SHA-256 <code class="hash">6d39a1f63e999a8132e0db9251a0010b1804101bcec8b76f39e98112f9401052</code>.</li>
         <li><strong>Enter your key.</strong> Right-click the Agent Notch tray icon, choose "Enter license key...", and paste the key from your purchase email.</li>
-        <li><strong>Turn on the alerts.</strong> Open Settings and click "Install agent waiting hooks". This lets Claude Code, Codex, Gemini and OpenCode tell the notch when they are waiting on you or done.</li>
+        <li><strong>Turn on the alerts.</strong> Open Settings and click "Install agent waiting hooks". Claude Code, Codex, Gemini and OpenCode can then tell the notch when they ask you something, need approval, or are done.</li>
       </ol>
       <h3>Two computers, and offline</h3>
       <p>One key works on two of your computers. Pro keeps working for 7 days offline. The license is checked once a day.</p>
       <h3>Updates</h3>
-      <p>Download the latest zip from your Dodo customer portal and run <code>install.bat</code> again.</p>
+      <p>Pro updates itself. When a new version is ready, the tray and Settings show "Restart to update"; it never restarts on its own.</p>
+      <h3>Coming from the zip version?</h3>
+      <p>Quit the old Agent Notch, run the installer and you're done: your license, settings and agent hooks carry over. The old <code>tools\agent-notch-pro</code> folder is left alone; delete it whenever you like.</p>
       <h3>Help</h3>
       <p>Write to <a href="mailto:adityaryawork@gmail.com">adityaryawork@gmail.com</a>. Refund questions are covered on the <a href="refund/">refund page</a>.</p>
     </div>
@@ -345,7 +348,7 @@
         </details>
         <details>
           <summary>Where do I get Pro after buying?</summary>
-          <p>Dodo Payments emails you a license key right after you pay; check spam or promotions if it hasn't arrived in a few minutes. Download the Pro zip from your Dodo customer portal (sign in with the email you paid with). Unzip it, double-click <code>install.bat</code> (needs Windows 10/11 and Node.js 18 or newer), then right-click the tray icon, choose "Enter license key..." and paste your key. Steps are in <a href="#after-buy">After you buy Pro</a>. Stuck? Write to adityaryawork@gmail.com.</p>
+          <p>Dodo Payments emails you a license key right after you pay; check spam or promotions if it hasn't arrived in a few minutes. Download the installer from your Dodo customer portal (sign in with the email you paid with) and run it (Windows 10/11, no admin rights, nothing else to install). Then right-click the tray icon, choose "Enter license key..." and paste your key. Steps are in <a href="#after-buy">After you buy Pro</a>. Stuck? Write to adityaryawork@gmail.com.</p>
         </details>
         <details>
           <summary>What happens to Pro if I'm offline?</summary>
