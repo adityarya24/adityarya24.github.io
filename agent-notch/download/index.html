@@ -111,6 +111,7 @@
       var m = /[?&]api=([^&]+)/.exec(location.search);
       if (m) API = decodeURIComponent(m[1]);
     }
+    var LOCAL = location.hostname === "localhost";
     var MAIL = '<a href="mailto:adityaryawork@gmail.com">adityaryawork@gmail.com</a>';
     var form = document.getElementById("f"), input = document.getElementById("key"),
         btn = document.getElementById("go"), st = document.getElementById("status"),
@@ -143,7 +144,7 @@
       }).then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) { return { s: r.status, j: j }; });
       }).then(function (o) {
-        if (o.s === 200 && o.j && typeof o.j.url === "string" && o.j.url.indexOf("https://") === 0) {
+        if (o.s === 200 && o.j && typeof o.j.url === "string" && (o.j.url.indexOf("https://") === 0 || (LOCAL && o.j.url.indexOf("http://") === 0))) {
           say("Key accepted. Your download is starting…", "ok");
           window.location.assign(o.j.url);
           setTimeout(function () {
