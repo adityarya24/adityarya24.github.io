@@ -350,22 +350,20 @@
         <ul class="builds">
           <li><a href="https://github.com/adityarya24/AgentRelay" target="_blank" rel="noopener">AgentRelay</a> <span class="m">Apr</span><br />WebSocket relay so agents can talk to each other with rate limits and an identity registry.</li>
           <li><a href="https://github.com/adityarya24/astro-skill" target="_blank" rel="noopener">astro-skill</a> <span class="m">Jul · open source</span><br />Vedic astrology engine on Swiss Ephemeris: kundali, dasha, panchang, guna milan, bilingual PDFs. No API keys.</li>
-          <li><a href="https://github.com/adityarya24/mindsync-ai" target="_blank" rel="noopener">MindSync AI</a> <span class="m">Jul · on PyPI</span><br />Local-first MCP orchestrator that routes work across Claude, Codex, Gemini and others, with shared memory and path locking.</li>
+          <li><a href="https://yuvaanlabs.com/hivelane/" target="_blank" rel="noopener">Hivelane</a> <span class="m">Oct · launched</span><br />Air traffic control for coding agents: routes each task to the agent that fits it, gives every worker its own git worktree, and hands the work on when a seat runs low.</li>
         </ul>
         <figure class="term">
-          <div class="term-bar"><i></i><i></i><i></i><span>mindsync ~ bash</span></div>
-          <pre class="term-body" aria-label="MindSync terminal session"><code data-lines='[
-["$ ","pip install mindsync-ai"],
-["","Successfully installed mindsync-ai"],
-["$ ","mindsync setup --mode auto"],
-["","✓ Registered MCP hosts: claude, codex, gemini"],
-["$ ","mindsync-dispatch run auto \"refactor database schema\" --write --worktree --on-limit handoff"],
-["","→ routed to codex (capability: coding)"],
-["","→ isolated git worktree created"],
-["","! codex hit its usage limit, handing off to claude with the latest checkpoint"],
-["","✓ done · review the branch, then merge"]
+          <div class="term-bar"><i></i><i></i><i></i><span>hivelane ~ bash</span></div>
+          <pre class="term-body" aria-label="Hivelane terminal session"><code data-lines='[
+["$ ","hivelane setup"],
+["","→ finds the coding CLIs on this machine and connects them"],
+["$ ","hivelane-dispatch run auto \"add tests for the refund flow\" --capability coding --worktree --background"],
+["","→ AUTO ROUTE: Selected codex because it is installed and matched: coding; 38% used vs claude 61%"],
+["","→ background job started in its own git worktree"],
+["","! codex is near its limit, handing off with the diff and the last checkpoint"],
+["","✓ done · review it, then merge"]
 ]'></code><span class="caret"></span></pre>
-          <figcaption>Illustrative session. The commands are real, from the <a href="https://github.com/adityarya24/mindsync-ai#readme" target="_blank" rel="noopener">MindSync README</a>.</figcaption>
+          <figcaption>Illustrative session. The commands and the route line are real, from the <a href="https://yuvaanlabs.com/hivelane/" target="_blank" rel="noopener">Hivelane page</a>.</figcaption>
         </figure>
       </section>
 
@@ -405,7 +403,7 @@
         <h3>What I'm building</h3>
         <span class="note" aria-hidden="true">still shipping ↓</span>
         <p><strong>Agent Notch</strong>: alerts the moment an agent is stuck waiting for approval, and one click to its terminal.<br />
-        <strong>MindSync</strong>: working on v2.<br />
+        <strong>Hivelane</strong>: just launched. One agent in charge, the rest on call.<br />
         <strong>VedPatrika</strong>: growing it, one honest improvement at a time.</p>
       </section>
     </div>
@@ -468,7 +466,7 @@
       addEventListener("scroll", onScroll, { passive: true });
       addEventListener("resize", onScroll);
       onScroll();
-      // Type the MindSync session line by line, then start over.
+      // Type the Hivelane session line by line, then start over.
       const code = document.querySelector(".term-body code");
       if (code) {
         const lines = JSON.parse(code.dataset.lines);
